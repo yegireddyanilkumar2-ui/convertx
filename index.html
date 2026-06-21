@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ConvertX – Free Online PDF, Image & Video Converter | 30+ Tools, No Upload</title>
+<meta name="description" content="ConvertX offers 30+ free browser-based tools for PDF, image, and video conversion. PDF to image, merge/split/compress PDF, watermark, JPG to PNG/WEBP, resize, crop, rotate, filters, extract audio, trim video, GIFs, and more. 100% private — files never leave your device."/>
+<meta name="keywords" content="free pdf converter, pdf to image, merge pdf, split pdf, compress pdf, watermark pdf, jpg to png, png to webp, image resizer, image compressor, video to gif, extract audio, trim video online, image filter, rotate image, grayscale, favicon generator, base64 image, free file converter"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://convert.aiusagetools.com/"/>
+<meta property="og:title" content="ConvertX – 30+ Free PDF, Image & Video Tools"/>
+<meta property="og:description" content="Free browser-based tools for PDF, image, and video. No uploads. No sign-up. 100% private."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ConvertX","url":"https://convert.aiusagetools.com/","description":"30+ free browser-based PDF, image and video conversion tools","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<!-- AdSense: replace ca-pub-7407560506101366 after approval -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7407560506101366" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<style>
+:root{--bg:#07070e;--bg2:#0f0f1a;--bg3:#181825;--card:#111120;--border:rgba(140,130,255,0.1);--border2:rgba(140,130,255,0.22);--accent:#7c6fff;--accent2:#ff6bac;--accent3:#00e5b0;--text:#eeeeff;--text2:#9b99cc;--text3:#55537a;--r:14px;--rs:9px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,111,255,0.08),transparent),radial-gradient(ellipse 60% 40% at 80% 110%,rgba(255,107,172,0.07),transparent);pointer-events:none;z-index:0}
+nav{position:sticky;top:0;z-index:200;background:rgba(7,7,14,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);height:60px;display:flex;align-items:center;padding:0 1.5rem;gap:1rem}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;margin-right:0.5rem}
+.nav-menus{display:flex;gap:0.25rem;flex:1;overflow-x:auto;scrollbar-width:none}
+.nav-menus::-webkit-scrollbar{display:none}
+.nav-group{position:relative}
+.nav-trigger{background:transparent;border:none;color:var(--text2);font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;padding:0.4rem 0.75rem;border-radius:7px;cursor:pointer;display:flex;align-items:center;gap:5px;white-space:nowrap;transition:all 0.2s}
+.nav-trigger:hover,.nav-trigger.open{color:var(--text);background:rgba(124,111,255,0.12)}
+.nav-trigger .arr{font-size:0.6rem;transition:transform 0.2s;opacity:0.6}
+.nav-trigger.open .arr{transform:rotate(180deg)}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;min-width:260px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:0.5rem;z-index:300;display:none;box-shadow:0 20px 60px rgba(0,0,0,0.6);animation:ddIn 0.18s ease}
+@keyframes ddIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.nav-group.open .nav-dropdown{display:block}
+.dd-item{display:flex;align-items:center;gap:10px;padding:0.5rem 0.85rem;border-radius:8px;cursor:pointer;transition:background 0.15s;border:none;background:none;width:100%;text-align:left;color:var(--text2);font-family:'DM Sans',sans-serif;font-size:0.81rem}
+.dd-item:hover{background:rgba(124,111,255,0.1);color:var(--text)}
+.dd-item .di{font-size:1rem;width:22px;text-align:center;flex-shrink:0}
+.dd-item .dt strong{display:block;color:var(--text);font-size:0.81rem;font-weight:500}
+.dd-item .dt span{color:var(--text3);font-size:0.7rem}
+.dd-sep{height:1px;background:var(--border);margin:0.3rem 0.5rem}
+.dd-cat{padding:0.3rem 0.85rem;font-size:0.67rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;font-weight:600}
+.ad-slot{background:var(--bg2);border:1px dashed rgba(124,111,255,0.18);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;overflow:hidden;position:relative;z-index:1}
+.ad-label{font-size:0.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.12em}
+.ad-placeholder{font-size:0.7rem;color:var(--text3)}
+.hero{position:relative;z-index:1;text-align:center;padding:3.5rem 1.5rem 2rem}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,111,255,0.1);border:1px solid rgba(124,111,255,0.25);color:#bbb4ff;font-size:0.75rem;font-weight:500;padding:0.3rem 0.9rem;border-radius:100px;margin-bottom:1.25rem}
+.pulse{width:6px;height:6px;background:var(--accent3);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:1rem}
+.grad{background:linear-gradient(135deg,var(--accent),var(--accent2) 50%,var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{color:var(--text2);font-size:1rem;max-width:640px;margin:0 auto 1.5rem;line-height:1.7;font-weight:300}
+.pills{display:flex;gap:0.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.pill{background:var(--bg3);border:1px solid var(--border);color:var(--text3);padding:0.3rem 0.85rem;border-radius:100px;font-size:0.75rem;font-weight:500}
+.home-grid{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 1.5rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:0.75rem}
+.home-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem;cursor:pointer;transition:all 0.2s;text-align:center}
+.home-card:hover{border-color:var(--border2);background:var(--bg2);transform:translateY(-2px)}
+.hc-icon{font-size:1.5rem;margin-bottom:0.4rem}
+.hc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:var(--text);margin-bottom:0.15rem}
+.hc-cat{font-size:0.68rem;color:var(--text3)}
+.cat-badge{display:inline-block;padding:0.12rem 0.45rem;border-radius:4px;font-size:0.62rem;font-weight:600;margin-bottom:0.35rem}
+.cat-pdf{background:rgba(255,107,172,0.12);color:#ff9ec6}
+.cat-img{background:rgba(124,111,255,0.12);color:#bbb4ff}
+.cat-vid{background:rgba(0,229,176,0.12);color:#00e5b0}
+.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);z-index:400;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.drawer-overlay.open{opacity:1;pointer-events:all}
+.drawer{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--bg2);border-top:1px solid var(--border2);border-radius:24px 24px 0 0;max-height:88vh;display:flex;flex-direction:column;transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.32,0.72,0,1)}
+.drawer.open{transform:translateY(0)}
+.drawer-handle{width:36px;height:4px;background:var(--border2);border-radius:2px;margin:12px auto 0;flex-shrink:0;cursor:grab}
+.drawer-head{display:flex;align-items:center;gap:12px;padding:1rem 1.5rem 0.75rem;border-bottom:1px solid var(--border);flex-shrink:0}
+.drawer-icon{font-size:1.5rem}
+.drawer-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;flex:1}
+.drawer-close{background:rgba(255,255,255,0.07);border:none;color:var(--text2);border-radius:8px;padding:0.4rem 0.8rem;cursor:pointer;font-size:0.85rem;transition:background 0.2s}
+.drawer-close:hover{background:rgba(255,255,255,0.13);color:var(--text)}
+.drawer-body{overflow-y:auto;flex:1;padding:1.25rem 1.5rem 2rem;display:flex;gap:1.5rem}
+.drawer-body::-webkit-scrollbar{width:4px}
+.drawer-body::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:2px}
+.drawer-main{flex:1;min-width:0}
+.drawer-sidebar{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:1rem}
+@media(max-width:820px){.drawer-body{flex-direction:column}.drawer-sidebar{width:100%}}
+.slabel{font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.6rem;margin-top:1.1rem}
+.slabel:first-child{margin-top:0}
+.drop-zone{border:2px dashed var(--border2);border-radius:var(--rs);padding:1.75rem 1rem;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(124,111,255,0.02)}
+.drop-zone:hover,.drop-zone.dg{border-color:var(--accent);background:rgba(124,111,255,0.06)}
+.drop-zone input{display:none}
+.dz-icon{font-size:1.8rem;margin-bottom:0.4rem}
+.dz-text{color:var(--text2);font-size:0.83rem}
+.dz-sub{color:var(--text3);font-size:0.72rem;margin-top:0.2rem}
+.ctrl-row{display:flex;gap:0.55rem;align-items:center;margin-bottom:0.65rem;flex-wrap:wrap}
+.ctrl-row label{color:var(--text3);font-size:0.77rem;white-space:nowrap}
+select,input[type=number],input[type=text]{background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:0.4rem 0.7rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;outline:none;transition:border-color 0.2s;flex:1;min-width:65px}
+select:focus,input:focus{border-color:var(--accent)}
+input[type=range]{padding:0;height:4px;accent-color:var(--accent);cursor:pointer;flex:1;min-width:80px;background:transparent}
+input[type=color]{padding:2px 4px;height:34px;width:44px;flex:none;cursor:pointer;border-radius:6px;border:1px solid var(--border2);background:var(--bg3)}
+input[type=checkbox]{accent-color:var(--accent);width:14px;height:14px;cursor:pointer;flex:none}
+.btn-go{border:none;border-radius:9px;background:linear-gradient(135deg,var(--accent),#a855f7);color:#fff;width:100%;padding:0.72rem;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.88rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:7px;margin-top:0.75rem}
+.btn-go:hover{opacity:0.88;transform:scale(0.99)}
+.btn-go:disabled{opacity:0.38;cursor:not-allowed;transform:none}
+.result-box{background:rgba(0,229,176,0.07);border:1px solid rgba(0,229,176,0.2);border-radius:var(--rs);padding:0.7rem 1rem;color:var(--accent3);font-size:0.8rem;margin-top:0.75rem;display:none;align-items:center;gap:8px}
+.error-box{background:rgba(255,80,80,0.07);border:1px solid rgba(255,80,80,0.2);border-radius:var(--rs);padding:0.7rem 1rem;color:#ff8888;font-size:0.8rem;margin-top:0.75rem;display:none}
+.prog-bar{height:3px;background:var(--border);border-radius:2px;margin-top:0.5rem;overflow:hidden;display:none}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;transition:width 0.3s;width:0%}
+.file-chips{display:flex;flex-direction:column;gap:0.3rem;margin-top:0.45rem}
+.chip{display:flex;align-items:center;gap:8px;background:var(--bg3);border-radius:6px;padding:0.32rem 0.65rem;font-size:0.75rem;color:var(--text2)}
+.chip span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip .sz{color:var(--text3);flex-shrink:0}
+.preview-row{display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.45rem}
+.prev-thumb{width:52px;height:52px;border-radius:7px;overflow:hidden;background:var(--bg3);border:1px solid var(--border);flex-shrink:0}
+.prev-thumb img{width:100%;height:100%;object-fit:cover}
+.info-box{background:rgba(124,111,255,0.06);border:1px solid rgba(124,111,255,0.15);border-radius:var(--rs);padding:0.65rem 0.9rem;color:var(--text2);font-size:0.78rem;line-height:1.6;margin-bottom:0.65rem}
+.warn-box{background:rgba(255,185,0,0.07);border:1px solid rgba(255,185,0,0.2);border-radius:var(--rs);padding:0.65rem 0.9rem;color:#ffce54;font-size:0.78rem;line-height:1.5;margin-bottom:0.65rem}
+.ad-sidebar{background:var(--bg3);border:1px dashed rgba(124,111,255,0.18);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-height:250px;padding:1rem;text-align:center}
+.sec-wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:2rem 1.5rem}
+.sec-title{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:800;text-align:center;margin-bottom:0.4rem}
+.sec-sub{color:var(--text2);text-align:center;font-size:0.87rem;margin-bottom:1.6rem}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.85rem}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem;text-align:center}
+.why-icon{font-size:1.7rem;margin-bottom:0.45rem}
+.why-h{font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.3rem}
+.why-p{color:var(--text2);font-size:0.77rem;line-height:1.6}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);margin-bottom:0.55rem;overflow:hidden;cursor:pointer}
+.faq-item:hover{border-color:var(--border2)}
+.faq-q{width:100%;background:none;border:none;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;text-align:left;padding:0.85rem 1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q .arr2{color:var(--text3);transition:transform 0.22s;flex-shrink:0}
+.faq-item.open .faq-q .arr2{transform:rotate(180deg);color:var(--accent)}
+.faq-a{display:none;padding:0 1rem 0.85rem;color:var(--text2);font-size:0.81rem;line-height:1.7;border-top:1px solid var(--border)}
+.faq-item.open .faq-a{display:block}
+footer{position:relative;z-index:1;text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--border);color:var(--text3);font-size:0.76rem;line-height:2}
+footer strong{color:var(--text2)}
+canvas.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+
+<nav>
+  <div class="logo">ConvertX ✦</div>
+  <div class="nav-menus">
+    <div class="nav-group" id="ng-pdf">
+      <button class="nav-trigger" onclick="toggleDD('ng-pdf')">📄 PDF Tools <span class="arr">▼</span></button>
+      <div class="nav-dropdown">
+        <div class="dd-cat">Convert</div>
+        <button class="dd-item" onclick="openTool('pdf-to-img')"><span class="di">🖼️</span><span class="dt"><strong>PDF to Images</strong><span>Extract pages as PNG/JPG</span></span></button>
+        <button class="dd-item" onclick="openTool('img-to-pdf')"><span class="di">📑</span><span class="dt"><strong>Images to PDF</strong><span>Combine images into PDF</span></span></button>
+        <button class="dd-item" onclick="openTool('pdf-to-text')"><span class="di">📝</span><span class="dt"><strong>PDF to Text</strong><span>Extract all text content</span></span></button>
+        <div class="dd-sep"></div>
+        <div class="dd-cat">Organize</div>
+        <button class="dd-item" onclick="openTool('merge-pdf')"><span class="di">📚</span><span class="dt"><strong>Merge PDFs</strong><span>Combine multiple PDFs</span></span></button>
+        <button class="dd-item" onclick="openTool('split-pdf')"><span class="di">✂️</span><span class="dt"><strong>Split PDF</strong><span>Extract specific pages</span></span></button>
+        <button class="dd-item" onclick="openTool('rotate-pdf')"><span class="di">🔄</span><span class="dt"><strong>Rotate PDF Pages</strong><span>Rotate all or specific pages</span></span></button>
+        <div class="dd-sep"></div>
+        <div class="dd-cat">Enhance</div>
+        <button class="dd-item" onclick="openTool('compress-pdf')"><span class="di">🗜️</span><span class="dt"><strong>Compress PDF</strong><span>Reduce file size</span></span></button>
+        <button class="dd-item" onclick="openTool('watermark-pdf')"><span class="di">💧</span><span class="dt"><strong>Watermark PDF</strong><span>Add text watermark</span></span></button>
+        <button class="dd-item" onclick="openTool('pagenums-pdf')"><span class="di">🔢</span><span class="dt"><strong>Add Page Numbers</strong><span>Number every page</span></span></button>
+        <button class="dd-item" onclick="openTool('info-pdf')"><span class="di">ℹ️</span><span class="dt"><strong>PDF Info & Stats</strong><span>Page count, metadata</span></span></button>
+      </div>
+    </div>
+    <div class="nav-group" id="ng-img">
+      <button class="nav-trigger" onclick="toggleDD('ng-img')">🖼️ Image Tools <span class="arr">▼</span></button>
+      <div class="nav-dropdown" style="min-width:275px">
+        <div class="dd-cat">Convert & Export</div>
+        <button class="dd-item" onclick="openTool('img-convert')"><span class="di">🔄</span><span class="dt"><strong>Format Converter</strong><span>JPG ↔ PNG ↔ WEBP ↔ BMP</span></span></button>
+        <button class="dd-item" onclick="openTool('img-base64')"><span class="di">💻</span><span class="dt"><strong>Image to Base64</strong><span>Encode for web/CSS</span></span></button>
+        <button class="dd-item" onclick="openTool('img-favicon')"><span class="di">⭐</span><span class="dt"><strong>Favicon Generator</strong><span>Create icons from image</span></span></button>
+        <div class="dd-sep"></div>
+        <div class="dd-cat">Edit & Transform</div>
+        <button class="dd-item" onclick="openTool('img-resize')"><span class="di">📐</span><span class="dt"><strong>Resize Image</strong><span>Pixels or %, lock ratio</span></span></button>
+        <button class="dd-item" onclick="openTool('img-compress')"><span class="di">🗜️</span><span class="dt"><strong>Compress Image</strong><span>Reduce size, control quality</span></span></button>
+        <button class="dd-item" onclick="openTool('img-crop')"><span class="di">✂️</span><span class="dt"><strong>Crop Image</strong><span>Crop by coordinates</span></span></button>
+        <button class="dd-item" onclick="openTool('img-rotate')"><span class="di">🔄</span><span class="dt"><strong>Rotate & Flip</strong><span>90°/180°, flip H/V</span></span></button>
+        <button class="dd-item" onclick="openTool('img-watermark')"><span class="di">💧</span><span class="dt"><strong>Watermark Image</strong><span>Add text overlay</span></span></button>
+        <button class="dd-item" onclick="openTool('img-border')"><span class="di">🖼️</span><span class="dt"><strong>Add Border</strong><span>Custom color & width</span></span></button>
+        <div class="dd-sep"></div>
+        <div class="dd-cat">Filters & Adjust</div>
+        <button class="dd-item" onclick="openTool('img-filter')"><span class="di">🎨</span><span class="dt"><strong>Filters & Effects</strong><span>Grayscale, sepia, blur…</span></span></button>
+        <button class="dd-item" onclick="openTool('img-brightness')"><span class="di">☀️</span><span class="dt"><strong>Brightness & Contrast</strong><span>Adjust exposure, saturation</span></span></button>
+      </div>
+    </div>
+    <div class="nav-group" id="ng-vid">
+      <button class="nav-trigger" onclick="toggleDD('ng-vid')">🎬 Video Tools <span class="arr">▼</span></button>
+      <div class="nav-dropdown">
+        <div class="dd-cat">Convert & Export</div>
+        <button class="dd-item" onclick="openTool('vid-audio')"><span class="di">🎵</span><span class="dt"><strong>Extract Audio</strong><span>MP3, WAV, OGG</span></span></button>
+        <button class="dd-item" onclick="openTool('vid-gif')"><span class="di">🎞️</span><span class="dt"><strong>Video to GIF</strong><span>Animated GIF from clip</span></span></button>
+        <button class="dd-item" onclick="openTool('vid-frames')"><span class="di">📸</span><span class="dt"><strong>Extract Frames</strong><span>Save frames as images</span></span></button>
+        <button class="dd-item" onclick="openTool('vid-convert')"><span class="di">🔀</span><span class="dt"><strong>Convert Format</strong><span>MP4 ↔ WEBM ↔ MKV</span></span></button>
+        <div class="dd-sep"></div>
+        <div class="dd-cat">Edit & Enhance</div>
+        <button class="dd-item" onclick="openTool('vid-trim')"><span class="di">✂️</span><span class="dt"><strong>Trim Video</strong><span>Cut by time range</span></span></button>
+        <button class="dd-item" onclick="openTool('vid-compress')"><span class="di">🗜️</span><span class="dt"><strong>Compress Video</strong><span>Reduce file size</span></span></button>
+        <button class="dd-item" onclick="openTool('vid-mute')"><span class="di">🔇</span><span class="dt"><strong>Mute Video</strong><span>Remove audio track</span></span></button>
+        <button class="dd-item" onclick="openTool('vid-speed')"><span class="di">⚡</span><span class="dt"><strong>Change Speed</strong><span>0.25× to 4×</span></span></button>
+        <button class="dd-item" onclick="openTool('vid-watermark')"><span class="di">💧</span><span class="dt"><strong>Watermark Video</strong><span>Burn text onto video</span></span></button>
+        <button class="dd-item" onclick="openTool('vid-reverse')"><span class="di">⏪</span><span class="dt"><strong>Reverse Video</strong><span>Play backwards</span></span></button>
+      </div>
+    </div>
+    <button class="nav-trigger" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why Free?</button>
+    <button class="nav-trigger" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</button>
+  </div>
+</nav>
+
+<!-- TOP AD: Leaderboard 728x90 — prime visibility -->
+<div class="ad-slot" style="height:80px;width:100%;border-radius:0">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-placeholder">728×90 Leaderboard — Paste AdSense ins tag here</div>
+</div>
+
+<section class="hero">
+  <div class="badge"><span class="pulse"></span> 30+ Tools · 100% Free · No Upload · No Sign-up</div>
+  <h1>Convert PDF, Images<br>& Video <span class="grad">Instantly.</span></h1>
+  <p class="hero-sub">Every file tool you'll ever need — running entirely in your browser. Your files never leave your device. No accounts. No limits. Forever free.</p>
+  <div class="pills">
+    <span class="pill">🔒 100% Private</span><span class="pill">⚡ Instant</span>
+    <span class="pill">🌐 No Install</span><span class="pill">📱 Mobile Ready</span>
+    <span class="pill">🆓 Forever Free</span><span class="pill">📄 12 PDF Tools</span>
+    <span class="pill">🖼️ 11 Image Tools</span><span class="pill">🎬 10 Video Tools</span>
+  </div>
+</section>
+
+<!-- HERO RECTANGLE AD — 300x250, high CTR -->
+<div style="position:relative;z-index:1;max-width:320px;margin:0 auto 1.5rem;padding:0 1rem">
+  <div class="ad-slot" style="height:250px">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-placeholder">300×250 Rectangle Ad<br><small style="color:var(--text3)">High CTR slot — paste AdSense code</small></div>
+  </div>
+</div>
+
+<!-- HOME TOOL GRID -->
+<div class="home-grid">
+  <div class="home-card" onclick="openTool('pdf-to-img')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">🖼️</div><div class="hc-title">PDF to Images</div><div class="hc-cat">PNG/JPG per page</div></div>
+  <div class="home-card" onclick="openTool('img-to-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">📑</div><div class="hc-title">Images to PDF</div><div class="hc-cat">Combine images</div></div>
+  <div class="home-card" onclick="openTool('merge-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">📚</div><div class="hc-title">Merge PDFs</div><div class="hc-cat">Combine files</div></div>
+  <div class="home-card" onclick="openTool('split-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">✂️</div><div class="hc-title">Split PDF</div><div class="hc-cat">Extract pages</div></div>
+  <div class="home-card" onclick="openTool('compress-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">🗜️</div><div class="hc-title">Compress PDF</div><div class="hc-cat">Reduce size</div></div>
+  <div class="home-card" onclick="openTool('watermark-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">💧</div><div class="hc-title">Watermark PDF</div><div class="hc-cat">Text overlay</div></div>
+  <div class="home-card" onclick="openTool('rotate-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">🔄</div><div class="hc-title">Rotate PDF</div><div class="hc-cat">All or specific pages</div></div>
+  <div class="home-card" onclick="openTool('pagenums-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">🔢</div><div class="hc-title">Page Numbers</div><div class="hc-cat">Auto number pages</div></div>
+  <div class="home-card" onclick="openTool('pdf-to-text')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">📝</div><div class="hc-title">PDF to Text</div><div class="hc-cat">Extract text</div></div>
+  <div class="home-card" onclick="openTool('info-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">ℹ️</div><div class="hc-title">PDF Info</div><div class="hc-cat">Metadata & stats</div></div>
+  <div class="home-card" onclick="openTool('img-convert')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🔄</div><div class="hc-title">Format Convert</div><div class="hc-cat">JPG/PNG/WEBP/BMP</div></div>
+  <div class="home-card" onclick="openTool('img-resize')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">📐</div><div class="hc-title">Resize Image</div><div class="hc-cat">Pixels or %</div></div>
+  <div class="home-card" onclick="openTool('img-compress')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🗜️</div><div class="hc-title">Compress Image</div><div class="hc-cat">Quality control</div></div>
+  <div class="home-card" onclick="openTool('img-crop')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">✂️</div><div class="hc-title">Crop Image</div><div class="hc-cat">By coordinates</div></div>
+  <div class="home-card" onclick="openTool('img-rotate')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🔄</div><div class="hc-title">Rotate & Flip</div><div class="hc-cat">90°/180°/flip</div></div>
+  <div class="home-card" onclick="openTool('img-watermark')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">💧</div><div class="hc-title">Watermark</div><div class="hc-cat">Text overlay</div></div>
+  <div class="home-card" onclick="openTool('img-filter')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🎨</div><div class="hc-title">Filters & Effects</div><div class="hc-cat">10+ filters</div></div>
+  <div class="home-card" onclick="openTool('img-brightness')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">☀️</div><div class="hc-title">Brightness</div><div class="hc-cat">Contrast & saturation</div></div>
+  <div class="home-card" onclick="openTool('img-border')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🖼️</div><div class="hc-title">Add Border</div><div class="hc-cat">Custom color & size</div></div>
+  <div class="home-card" onclick="openTool('img-favicon')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">⭐</div><div class="hc-title">Favicon Maker</div><div class="hc-cat">All icon sizes</div></div>
+  <div class="home-card" onclick="openTool('img-base64')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">💻</div><div class="hc-title">Image to Base64</div><div class="hc-cat">Encode for web</div></div>
+  <div class="home-card" onclick="openTool('vid-audio')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🎵</div><div class="hc-title">Extract Audio</div><div class="hc-cat">MP3/WAV/OGG</div></div>
+  <div class="home-card" onclick="openTool('vid-trim')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">✂️</div><div class="hc-title">Trim Video</div><div class="hc-cat">Cut by time</div></div>
+  <div class="home-card" onclick="openTool('vid-compress')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🗜️</div><div class="hc-title">Compress Video</div><div class="hc-cat">Reduce size</div></div>
+  <div class="home-card" onclick="openTool('vid-gif')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🎞️</div><div class="hc-title">Video to GIF</div><div class="hc-cat">Animated GIF</div></div>
+  <div class="home-card" onclick="openTool('vid-speed')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">⚡</div><div class="hc-title">Change Speed</div><div class="hc-cat">0.25× to 4×</div></div>
+  <div class="home-card" onclick="openTool('vid-mute')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🔇</div><div class="hc-title">Mute Video</div><div class="hc-cat">Remove audio</div></div>
+  <div class="home-card" onclick="openTool('vid-watermark')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">💧</div><div class="hc-title">Video Watermark</div><div class="hc-cat">Burn text</div></div>
+  <div class="home-card" onclick="openTool('vid-reverse')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">⏪</div><div class="hc-title">Reverse Video</div><div class="hc-cat">Play backwards</div></div>
+  <div class="home-card" onclick="openTool('vid-frames')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">📸</div><div class="hc-title">Extract Frames</div><div class="hc-cat">Frames as images</div></div>
+  <div class="home-card" onclick="openTool('vid-convert')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🔀</div><div class="hc-title">Convert Format</div><div class="hc-cat">MP4/WEBM/MKV</div></div>
+</div>
+
+<!-- MID-PAGE BANNER AD -->
+<div style="position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 1.5rem">
+  <div class="ad-slot" style="height:90px;margin-bottom:1.5rem">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-placeholder">728×90 — Mid-page banner (paste AdSense code)</div>
+  </div>
+</div>
+
+<!-- WHY SECTION -->
+<div class="sec-wrap" id="why">
+  <h2 class="sec-title">Why Choose ConvertX?</h2>
+  <p class="sec-sub">The only free converter that truly respects your privacy</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🔒</div><div class="why-h">Zero Uploads</div><div class="why-p">All conversion happens inside your browser. Nothing ever goes to a server.</div></div>
+    <div class="why-card"><div class="why-icon">⚡</div><div class="why-h">Instant Results</div><div class="why-p">No queues, no waiting. Your device does the work immediately.</div></div>
+    <div class="why-card"><div class="why-icon">🆓</div><div class="why-h">Always Free</div><div class="why-p">No subscriptions, no daily limits, no premium tier. Every tool is free forever.</div></div>
+    <div class="why-card"><div class="why-icon">🌐</div><div class="why-h">No Install</div><div class="why-p">Works on Windows, Mac, Linux, iOS and Android — any modern browser.</div></div>
+    <div class="why-card"><div class="why-icon">📁</div><div class="why-h">30+ Tools</div><div class="why-p">PDF, image and video tools all in one place. Convert, compress, edit, filter.</div></div>
+    <div class="why-card"><div class="why-icon">🚫</div><div class="why-h">No Watermarks</div><div class="why-p">Output files are clean — no ConvertX branding added to your files.</div></div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="sec-wrap" id="faq" style="padding-top:0">
+  <h2 class="sec-title">Frequently Asked Questions</h2>
+  <p class="sec-sub" style="margin-bottom:1.2rem">Quick answers about ConvertX</p>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">Is ConvertX really free with no hidden costs? <span class="arr2">▼</span></button><div class="faq-a">Yes — completely free. No subscriptions, no premium tier, no watermarks, no daily limits. All 30+ tools are free for everyone forever.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">Are my files uploaded to a server? <span class="arr2">▼</span></button><div class="faq-a">Never. Every conversion happens inside your browser using PDF.js, pdf-lib, Canvas API, and FFmpeg.wasm. Your files never leave your device.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">What image formats and effects are supported? <span class="arr2">▼</span></button><div class="faq-a">ConvertX supports JPG, PNG, WEBP, BMP conversion. You can resize, compress, crop, rotate, flip, apply 10+ filters (grayscale, sepia, blur, sharpen, emboss, invert, warm, cool, brighten, darken), adjust brightness/contrast/saturation, add watermarks and borders, generate favicons, and encode images as Base64.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">Can I convert video without installing software? <span class="arr2">▼</span></button><div class="faq-a">Yes! Video tools use FFmpeg.wasm running entirely in your browser. Extract audio, trim, compress, change speed, mute, reverse, convert format, extract frames, add watermarks, and create GIFs — no installs needed.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">Is there a file size limit? <span class="arr2">▼</span></button><div class="faq-a">No hard limits. Very large files depend on your device's available RAM. For video, files under 500MB give best browser performance.</div></div>
+  <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">Does it work on mobile? <span class="arr2">▼</span></button><div class="faq-a">Yes, ConvertX is fully responsive on iOS and Android. PDF and image tools work great on mobile. Video tools work but may be slower on older phones.</div></div>
+</div>
+
+<!-- BOTTOM AD before footer -->
+<div style="position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 1.5rem 2rem">
+  <div class="ad-slot" style="height:90px">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-placeholder">728×90 — Bottom leaderboard (high scroll-through CTR)</div>
+  </div>
+</div>
+
+<footer>
+  <strong>ConvertX</strong> — 30+ Free PDF, Image & Video Converter Tools<br>
+  PDF to Image · Images to PDF · Merge PDF · Split PDF · Compress PDF · Watermark PDF · Rotate PDF · Page Numbers · PDF to Text<br>
+  Image Convert · Resize · Compress · Crop · Rotate · Watermark · Filters · Border · Brightness · Favicon · Base64<br>
+  Extract Audio · Trim · Compress Video · GIF · Speed · Mute · Watermark · Reverse · Frames · Format Convert<br><br>
+  Made with ❤️ · All processing in your browser · <span style="color:var(--accent2)">Your files never leave your device</span>
+</footer>
+
+<!-- BOTTOM DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="drawer-handle"></div>
+  <div class="drawer-head">
+    <span class="drawer-icon" id="d-icon">🔄</span>
+    <span class="drawer-title" id="d-title">Tool</span>
+    <button class="drawer-close" onclick="closeDrawer()">✕ Close</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-main" id="d-main"></div>
+    <div class="drawer-sidebar">
+      <!-- SIDEBAR AD 1 — shown while user works = excellent CTR -->
+      <div class="ad-sidebar">
+        <div class="ad-label">Advertisement</div>
+        <div style="font-size:0.72rem;color:var(--text3);text-align:center">300×250 Rectangle<br>Paste AdSense code here<br><br><!--<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX"></ins>--></div>
+      </div>
+      <!-- SIDEBAR AD 2 -->
+      <div class="ad-sidebar">
+        <div class="ad-label">Advertisement</div>
+        <div style="font-size:0.72rem;color:var(--text3);text-align:center">300×250 Rectangle<br>Second ad slot</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<canvas id="work-canvas" class="hidden"></canvas>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+// ── Nav dropdown ──
+function toggleDD(id){const g=document.getElementById(id);const was=g.classList.contains('open');document.querySelectorAll('.nav-group').forEach(x=>{x.classList.remove('open');x.querySelector('.nav-trigger').classList.remove('open')});if(!was){g.classList.add('open');g.querySelector('.nav-trigger').classList.add('open')}}
+document.addEventListener('click',e=>{if(!e.target.closest('.nav-group'))document.querySelectorAll('.nav-group').forEach(x=>{x.classList.remove('open');x.querySelector('.nav-trigger').classList.remove('open')})});
+
+// ── Drawer ──
+function openTool(id){
+  const cfg=TOOLS[id];if(!cfg)return;
+  document.getElementById('d-icon').textContent=cfg.icon;
+  document.getElementById('d-title').textContent=cfg.title;
+  document.getElementById('d-main').innerHTML=cfg.html();
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(cfg.init)setTimeout(cfg.init,50);
+  document.querySelectorAll('.nav-group').forEach(x=>{x.classList.remove('open');x.querySelector('.nav-trigger').classList.remove('open')});
+}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open');document.body.style.overflow='';}
+
+// ── Helpers ──
+function fmtSz(b){if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';return(b/1048576).toFixed(1)+' MB'}
+function showFiles(el,files){if(!el)return;let h='';Array.from(files).forEach(f=>{h+=`<div class="chip"><span>📎 ${f.name}</span><span class="sz">${fmtSz(f.size)}</span></div>`});el.innerHTML=h}
+function showPrevs(el,files){if(!el)return;let h='';Array.from(files).slice(0,6).forEach(f=>{h+=`<div class="prev-thumb"><img src="${URL.createObjectURL(f)}"/></div>`});if(files.length>6)h+=`<div class="prev-thumb" style="display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:0.75rem">+${files.length-6}</div>`;el.innerHTML=h}
+function ok(id){const el=document.getElementById(id);if(el)el.style.display='flex'}
+function er(id,msg){const el=document.getElementById(id);if(el){el.style.display='block';el.textContent='❌ '+msg}}
+function prg(fid,bid,pct){const b=document.getElementById(bid),f=document.getElementById(fid);if(b)b.style.display='block';if(f)f.style.width=pct+'%'}
+function hidePrg(bid){const b=document.getElementById(bid);if(b)b.style.display='none'}
+function dl(url,name){const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a)}
+function readAB(file){return new Promise((r,j)=>{const fr=new FileReader();fr.onload=e=>r(e.target.result);fr.onerror=j;fr.readAsArrayBuffer(file)})}
+function loadImg(file){return new Promise((r,j)=>{const i=new Image(),u=URL.createObjectURL(file);i.onload=()=>{URL.revokeObjectURL(u);r(i)};i.onerror=j;i.src=u})}
+function dzSetup(zoneId,inputId,handler){
+  const z=document.getElementById(zoneId);if(!z)return;
+  z.addEventListener('dragover',e=>{e.preventDefault();z.classList.add('dg')});
+  z.addEventListener('dragleave',()=>z.classList.remove('dg'));
+  z.addEventListener('drop',e=>{e.preventDefault();z.classList.remove('dg');handler(e.dataTransfer.files)});
+  z.addEventListener('click',()=>document.getElementById(inputId).click());
+  document.getElementById(inputId).addEventListener('change',function(){handler(this.files)});
+}
+function mmss(s){const p=s.split(':');return p.length===2?parseInt(p[0])*60+parseFloat(p[1]):parseFloat(s)}
+
+// ── FFmpeg ──
+let ffLoaded=false,ffInst=null;
+async function loadFF(){
+  if(ffLoaded)return;
+  const{createFFmpeg,fetchFile}=FFmpeg;
+  ffInst=createFFmpeg({log:false,corePath:'https://unpkg.com/@ffmpeg/core@0.11.0/dist/ffmpeg-core.js'});
+  await ffInst.load();ffLoaded=true;window._ff=fetchFile;
+}
+async function runFF(inFile,inName,cmd,outName,pf,pb,rid,eid){
+  try{
+    prg(pf,pb,5);const eb=document.getElementById(eid);if(eb)eb.style.display='none';
+    await loadFF();
+    ffInst.FS('writeFile',inName,await window._ff(inFile));
+    prg(pf,pb,20);
+    ffInst.setProgress(({ratio})=>{prg(pf,pb,20+Math.round(ratio*75))});
+    await ffInst.run(...cmd);
+    prg(pf,pb,98);
+    const data=ffInst.FS('readFile',outName);
+    const ext=outName.split('.').pop();
+    const mm={mp3:'audio/mpeg',wav:'audio/wav',ogg:'audio/ogg',mp4:'video/mp4',webm:'video/webm',gif:'image/gif',mkv:'video/x-matroska',png:'image/png',jpg:'image/jpeg'};
+    dl(URL.createObjectURL(new Blob([data.buffer],{type:mm[ext]||'application/octet-stream'})),outName);
+    try{ffInst.FS('unlink',inName);ffInst.FS('unlink',outName)}catch(e){}
+    hidePrg(pb);ok(rid);
+  }catch(e){hidePrg(pb);er(eid,e.message||'Processing failed. Try a smaller file.')}
+}
+
+// ── HTML builder helpers ──
+const SL=(t)=>`<div class="slabel">${t}</div>`;
+const IB=(t)=>`<div class="info-box">ℹ️ ${t}</div>`;
+const WB=(t)=>`<div class="warn-box">⏳ ${t}</div>`;
+const CR=(l,c)=>`<div class="ctrl-row"><label>${l}</label>${c}</div>`;
+const SEL=(id,opts)=>`<select id="${id}">${opts.map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select>`;
+const NUM=(id,val,min,max,w)=>`<input type="number" id="${id}" value="${val}" min="${min}"${max?` max="${max}"`:''} style="width:${w||'80px'};flex:none"/>`;
+const DZ=(accept,multi)=>`<div class="drop-zone" id="dz"><input type="file" id="fi" accept="${accept}"${multi?' multiple':''}/><div class="dz-icon">☁️</div><div class="dz-text">Drop file here or click to browse</div><div class="dz-sub">No file size limits — 100% private</div></div>`;
+const FC=(multi)=>`<div class="${multi?'preview-row':'file-chips'}" id="fc"></div>`;
+const BTN=(fn,lbl='⚡ Convert & Download')=>`<button class="btn-go" id="gb" disabled onclick="${fn}()">${lbl}</button><div class="prog-bar" id="pb"><div class="prog-fill" id="pf"></div></div><div class="result-box" id="rb">✅ Done! File downloaded.</div><div class="error-box" id="eb"></div>`;
+
+// ══════════════════════════════════════════
+// TOOL DEFINITIONS
+// ══════════════════════════════════════════
+const TOOLS={
+
+// ── PDF TOOLS ──────────────────────────
+'pdf-to-img':{icon:'🖼️',title:'PDF to Images',
+  html:()=>SL('Upload PDF')+DZ('.pdf',false)+FC(false)+SL('Options')+
+    CR('Format',SEL('fmt',[['png','PNG (lossless)'],['jpeg','JPG (smaller)']]))+
+    CR('Quality / Scale',SEL('sc',[['2','High — 2× (best quality)'],['1.5','Medium — 1.5×'],['1','Low — 1× (fastest)']]))+
+    BTN('runP2I','⚡ Extract All Pages as Images'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._p2iFile=f[0]})},
+
+'img-to-pdf':{icon:'📑',title:'Images to PDF',
+  html:()=>SL('Upload Images (multiple OK)')+DZ('image/*',true)+FC(true)+SL('Options')+
+    CR('Page size',SEL('sz',[['a4','A4'],['letter','Letter'],['fit','Fit to image']]))+
+    CR('Page margin',SEL('mg',[['20','Normal (20px)'],['0','None'],['40','Wide (40px)']]))+
+    BTN('runI2P','⚡ Create PDF'),
+  init:()=>dzSetup('dz','fi',f=>{showPrevs(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._i2pFiles=f})},
+
+'merge-pdf':{icon:'📚',title:'Merge PDFs',
+  html:()=>SL('Upload PDFs to Merge (in order)')+DZ('.pdf',true)+FC(false)+
+    BTN('runMerge','⚡ Merge into One PDF'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._mrgFiles=f})},
+
+'split-pdf':{icon:'✂️',title:'Split PDF',
+  html:()=>SL('Upload PDF')+DZ('.pdf',false)+FC(false)+SL('Split Mode')+
+    CR('Mode',`<select id="md" onchange="document.getElementById('rr').style.display=this.value==='range'?'flex':'none'">
+      <option value="all">All pages → separate files</option><option value="range">Extract page range</option></select>`)+
+    `<div class="ctrl-row" id="rr" style="display:none">
+      <label>From page</label>${NUM('sf',1,1,null,'70px')}<label>To page</label>${NUM('st',2,1,null,'70px')}</div>`+
+    BTN('runSplit','⚡ Split PDF'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._splFile=f[0]})},
+
+'rotate-pdf':{icon:'🔄',title:'Rotate PDF Pages',
+  html:()=>SL('Upload PDF')+DZ('.pdf',false)+FC(false)+SL('Rotation')+
+    CR('Rotate by',SEL('rot',[['90','90° Clockwise'],['180','180°'],['270','90° Counter-clockwise']]))+
+    CR('Apply to',SEL('pgs',[['all','All pages'],['odd','Odd pages only'],['even','Even pages only']]))+
+    BTN('runRotatePDF','⚡ Rotate & Download'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._rotFile=f[0]})},
+
+'compress-pdf':{icon:'🗜️',title:'Compress PDF',
+  html:()=>IB('Re-encodes embedded images at lower quality to reduce file size. Text and links remain intact.')+
+    SL('Upload PDF')+DZ('.pdf',false)+FC(false)+
+    CR('Compression',SEL('cl',[['high','Aggressive — smallest file'],['medium','Balanced (recommended)'],['low','Gentle — slight reduction']]))+
+    BTN('runCompressPDF','⚡ Compress PDF'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._cmpFile=f[0]})},
+
+'watermark-pdf':{icon:'💧',title:'Watermark PDF',
+  html:()=>SL('Upload PDF')+DZ('.pdf',false)+FC(false)+SL('Watermark Settings')+
+    CR('Text',`<input type="text" id="wt" value="CONFIDENTIAL" style="flex:1"/>`)+
+    `<div class="ctrl-row"><label>Opacity</label>${NUM('wo',30,5,100,'65px')}<span style="color:var(--text3);font-size:0.77rem">%</span>
+     <label style="margin-left:.5rem">Size</label>${SEL('ws',[['60','Large'],['40','Medium'],['24','Small']])}</div>`+
+    CR('Color',SEL('wc',[['0,0,0','Black'],['180,0,0','Red'],['0,0,180','Blue'],['120,120,120','Gray']]))+
+    BTN('runWatermarkPDF','⚡ Add Watermark'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._wmFile=f[0]})},
+
+'pagenums-pdf':{icon:'🔢',title:'Add Page Numbers',
+  html:()=>SL('Upload PDF')+DZ('.pdf',false)+FC(false)+SL('Number Style')+
+    CR('Position',SEL('pos',[['bottom-center','Bottom Center'],['bottom-right','Bottom Right'],['top-center','Top Center']]))+
+    `<div class="ctrl-row"><label>Start from</label>${NUM('sn',1,1,null,'70px')}<label style="margin-left:.5rem">Format</label>
+     ${SEL('pf2',[['num','1, 2, 3…'],['page','Page 1, Page 2…']])}</div>`+
+    BTN('runPageNums','⚡ Add Page Numbers'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._pnFile=f[0]})},
+
+'pdf-to-text':{icon:'📝',title:'PDF to Text',
+  html:()=>IB('Extracts selectable text from digital PDFs. Scanned image-PDFs require OCR software (not browser-capable).')+
+    SL('Upload PDF')+DZ('.pdf',false)+FC(false)+
+    `<button class="btn-go" id="gb" disabled onclick="runP2T()">⚡ Extract Text</button>
+     <div class="prog-bar" id="pb"><div class="prog-fill" id="pf"></div></div>
+     <textarea id="txt" style="width:100%;height:200px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:var(--rs);padding:.75rem;font-family:monospace;font-size:.76rem;margin-top:.75rem;resize:vertical;display:none" readonly placeholder="Extracted text will appear here…"></textarea>
+     <button class="btn-go" id="cpb" style="display:none;background:var(--bg3);border:1px solid var(--border2);color:var(--text2);margin-top:.5rem" onclick="navigator.clipboard.writeText(document.getElementById('txt').value);this.textContent='✅ Copied!'">📋 Copy All Text</button>
+     <div class="error-box" id="eb"></div>`,
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._p2tFile=f[0]})},
+
+'info-pdf':{icon:'ℹ️',title:'PDF Info & Stats',
+  html:()=>SL('Upload PDF')+DZ('.pdf',false)+FC(false)+
+    `<button class="btn-go" id="gb" disabled onclick="runInfo()">⚡ Analyze PDF</button>
+     <div id="infores" style="display:none;margin-top:1rem"></div>
+     <div class="error-box" id="eb"></div>`,
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._infoFile=f[0]})},
+
+// ── IMAGE TOOLS ────────────────────────
+'img-convert':{icon:'🔄',title:'Image Format Converter',
+  html:()=>SL('Upload Images (multiple OK)')+DZ('image/*',true)+FC(true)+SL('Output Settings')+
+    CR('Convert to',SEL('fmt',[['image/png','PNG (lossless)'],['image/jpeg','JPG (smaller)'],['image/webp','WEBP (modern web)'],['image/bmp','BMP (uncompressed)']]))+
+    CR('Quality',SEL('q',[['1','Max (100%)'],['0.9','High (90%)'],['0.75','Medium (75%)'],['0.5','Low (50%)']]))+
+    BTN('runImgConvert','⚡ Convert All Images'),
+  init:()=>dzSetup('dz','fi',f=>{showPrevs(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._icFiles=f})},
+
+'img-resize':{icon:'📐',title:'Resize Image',
+  html:()=>SL('Upload Image')+DZ('image/*',false)+FC(false)+
+    `<div id="oi" style="color:var(--text3);font-size:.75rem;margin:.4rem 0;display:none">Original size: <strong id="osz" style="color:var(--text2)"></strong></div>`+
+    SL('Resize Options')+
+    CR('Mode',`<select id="md" onchange="document.getElementById('pxr').style.display=this.value==='px'?'flex':'none';document.getElementById('pctr').style.display=this.value==='pct'?'flex':'none'">
+      <option value="px">Exact pixels</option><option value="pct">Percentage</option></select>`)+
+    `<div id="pxr" class="ctrl-row"><label>Width</label>${NUM('rw',800,1,null,'75px')}
+     <label>Height</label>${NUM('rh',600,1,null,'75px')}<label><input type="checkbox" id="lr" checked/> Lock ratio</label></div>
+     <div id="pctr" class="ctrl-row" style="display:none"><label>Scale %</label>${NUM('rpct',50,1,500,'80px')}</div>`+
+    CR('Save as',SEL('rfmt',[['image/png','PNG'],['image/jpeg','JPG'],['image/webp','WEBP']]))+
+    BTN('runResize','⚡ Resize & Download'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._rsFile=f[0];loadImg(f[0]).then(i=>{document.getElementById('oi').style.display='block';document.getElementById('osz').textContent=i.width+'×'+i.height;document.getElementById('rw').value=i.width;document.getElementById('rh').value=i.height})})},
+
+'img-compress':{icon:'🗜️',title:'Compress Image',
+  html:()=>SL('Upload Images (multiple OK)')+DZ('image/*',true)+FC(true)+SL('Compression Settings')+
+    `<div class="ctrl-row"><label>Quality: <strong id="qv">70%</strong></label></div>
+     <input type="range" min="5" max="100" value="70" id="cq" style="width:100%;margin-bottom:.75rem;accent-color:var(--accent)" oninput="document.getElementById('qv').textContent=this.value+'%'"/>`+
+    CR('Max width',SEL('mw',[['0','Keep original'],['1920','1920px (FHD)'],['1280','1280px (HD)'],['800','800px (web)'],['400','400px (mobile / thumbnail)']]))+
+    BTN('runCompress','⚡ Compress All'),
+  init:()=>dzSetup('dz','fi',f=>{showPrevs(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._cmFiles=f})},
+
+'img-crop':{icon:'✂️',title:'Crop Image',
+  html:()=>SL('Upload Image')+DZ('image/*',false)+FC(false)+
+    `<div id="ci" style="color:var(--text3);font-size:.75rem;margin:.4rem 0;display:none">Image size: <strong id="co" style="color:var(--text2)"></strong></div>`+
+    SL('Crop Area (pixels)')+
+    `<div class="ctrl-row"><label>X (left)</label>${NUM('cx',0,0,null,'65px')}<label>Y (top)</label>${NUM('cy',0,0,null,'65px')}</div>
+     <div class="ctrl-row"><label>Width</label>${NUM('cw',400,1,null,'65px')}<label>Height</label>${NUM('ch',300,1,null,'65px')}</div>`+
+    CR('Save as',SEL('cfmt',[['image/png','PNG'],['image/jpeg','JPG']]))+
+    BTN('runCrop','⚡ Crop & Download'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._crFile=f[0];loadImg(f[0]).then(i=>{document.getElementById('ci').style.display='block';document.getElementById('co').textContent=i.width+'×'+i.height;document.getElementById('cw').value=i.width;document.getElementById('ch').value=i.height})})},
+
+'img-rotate':{icon:'🔄',title:'Rotate & Flip Image',
+  html:()=>SL('Upload Image')+DZ('image/*',false)+FC(false)+SL('Transform')+
+    CR('Rotate',SEL('rota',[['0','No rotation'],['90','90° Clockwise'],['180','180°'],['270','90° Counter-clockwise']]))+
+    `<div class="ctrl-row" style="gap:1.5rem"><label><input type="checkbox" id="fh"/> Flip Horizontal</label><label><input type="checkbox" id="fv"/> Flip Vertical</label></div>`+
+    CR('Save as',SEL('rfmt',[['image/png','PNG'],['image/jpeg','JPG'],['image/webp','WEBP']]))+
+    BTN('runRotate','⚡ Apply & Download'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._rtFile=f[0]})},
+
+'img-watermark':{icon:'💧',title:'Watermark Image',
+  html:()=>SL('Upload Image')+DZ('image/*',false)+FC(false)+SL('Watermark Settings')+
+    CR('Text',`<input type="text" id="wt" value="© My Brand" style="flex:1"/>`)+
+    CR('Position',SEL('wp',[['br','Bottom Right'],['bl','Bottom Left'],['tr','Top Right'],['tl','Top Left'],['c','Center']]))+
+    `<div class="ctrl-row"><label>Font size</label>${NUM('wfs',40,10,300,'75px')}<label style="margin-left:.5rem">Opacity</label>${NUM('wo',60,10,100,'65px')}<span style="font-size:.77rem;color:var(--text3)">%</span></div>`+
+    CR('Color',`<input type="color" id="wc" value="#ffffff"/>`)+
+    CR('Save as',SEL('wfmt',[['image/png','PNG'],['image/jpeg','JPG']]))+
+    BTN('runWatermark','⚡ Add Watermark'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._wmgFile=f[0]})},
+
+'img-filter':{icon:'🎨',title:'Filters & Effects',
+  html:()=>SL('Upload Image')+DZ('image/*',false)+FC(false)+SL('Choose a Filter')+
+    `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.45rem;margin-bottom:.75rem">
+      ${[['grayscale','⬜ Grayscale'],['sepia','🟤 Sepia'],['invert','🔄 Invert'],['blur','🌫️ Blur'],['sharpen','🔪 Sharpen'],
+         ['emboss','🗿 Emboss'],['brightness','☀️ Brighten'],['darken','🌙 Darken'],['warm','🔥 Warm Tone'],['cool','❄️ Cool Tone']]
+        .map(([v,l])=>`<button class="dd-item" id="fb-${v}" style="border-radius:8px;background:var(--bg3);border:1px solid var(--border)" onclick="selFilt('${v}')">${l}</button>`).join('')}
+    </div>
+    <input type="hidden" id="selFiltVal" value="grayscale"/>
+    <div class="ctrl-row" id="famt-row" style="display:none">
+      <label>Strength</label><input type="range" id="famt" min="1" max="20" value="5" style="flex:1;accent-color:var(--accent)" oninput="document.getElementById('famtv').textContent=this.value"/>
+      <span id="famtv" style="color:var(--text2);min-width:18px">5</span>
+    </div>`+
+    CR('Save as',SEL('ffmt',[['image/png','PNG'],['image/jpeg','JPG']]))+
+    BTN('runFilter','⚡ Apply Filter & Download'),
+  init:()=>{dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._flFile=f[0]});setTimeout(()=>selFilt('grayscale'),60)}},
+
+'img-border':{icon:'🖼️',title:'Add Border to Image',
+  html:()=>SL('Upload Image')+DZ('image/*',false)+FC(false)+SL('Border Options')+
+    `<div class="ctrl-row"><label>Width (px)</label>${NUM('bw',20,1,500,'80px')}<label style="margin-left:.5rem">Color</label><input type="color" id="bc" value="#000000"/></div>`+
+    CR('Style',SEL('bs',[['solid','Solid fill'],['double','Double (outer + inner gap)']]))+
+    CR('Save as',SEL('bfmt',[['image/png','PNG'],['image/jpeg','JPG']]))+
+    BTN('runBorder','⚡ Add Border & Download'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._bdFile=f[0]})},
+
+'img-brightness':{icon:'☀️',title:'Brightness & Contrast',
+  html:()=>SL('Upload Image')+DZ('image/*',false)+FC(false)+SL('Adjustments')+
+    `<div class="ctrl-row"><label>Brightness <strong id="brv">0</strong></label></div>
+     <input type="range" id="brr" min="-100" max="100" value="0" style="width:100%;margin-bottom:.75rem;accent-color:var(--accent)" oninput="document.getElementById('brv').textContent=this.value"/>
+     <div class="ctrl-row"><label>Contrast <strong id="ctv">0</strong></label></div>
+     <input type="range" id="ctr" min="-100" max="100" value="0" style="width:100%;margin-bottom:.75rem;accent-color:var(--accent)" oninput="document.getElementById('ctv').textContent=this.value"/>
+     <div class="ctrl-row"><label>Saturation <strong id="satv">0</strong></label></div>
+     <input type="range" id="satr" min="-100" max="100" value="0" style="width:100%;margin-bottom:.75rem;accent-color:var(--accent)" oninput="document.getElementById('satv').textContent=this.value"/>`+
+    CR('Save as',SEL('bcfmt',[['image/png','PNG'],['image/jpeg','JPG']]))+
+    BTN('runBrightness','⚡ Apply & Download'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._bcFile=f[0]})},
+
+'img-base64':{icon:'💻',title:'Image to Base64',
+  html:()=>IB('Converts image to Base64 string for embedding in HTML/CSS/JSON — no external file needed. Great for web developers.')+
+    SL('Upload Image')+DZ('image/*',false)+FC(false)+
+    CR('Output format',SEL('b64fmt',[['data','Data URI (use in img src="")'],['raw','Raw Base64 string only'],['css','CSS background-image value']]))+
+    `<button class="btn-go" id="gb" disabled onclick="runBase64()">⚡ Encode to Base64</button>
+     <textarea id="b64out" style="width:100%;height:150px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:var(--rs);padding:.75rem;font-family:monospace;font-size:.7rem;resize:vertical;margin-top:.75rem;display:none" readonly></textarea>
+     <button class="btn-go" id="cpb64" style="display:none;background:var(--bg3);border:1px solid var(--border2);color:var(--text2);margin-top:.5rem" onclick="navigator.clipboard.writeText(document.getElementById('b64out').value);this.textContent='✅ Copied!'">📋 Copy to Clipboard</button>
+     <div class="error-box" id="eb"></div>`,
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._b64File=f[0]})},
+
+'img-favicon':{icon:'⭐',title:'Favicon Generator',
+  html:()=>IB('Generates PNG favicons in all standard sizes. Download and place in your website root for full browser support.')+
+    SL('Upload Image (square works best)')+DZ('image/*',false)+FC(false)+SL('Sizes to Generate')+
+    `<div class="ctrl-row" style="flex-wrap:wrap;gap:.6rem">
+      <label><input type="checkbox" id="s16" checked/> 16×16</label>
+      <label><input type="checkbox" id="s32" checked/> 32×32</label>
+      <label><input type="checkbox" id="s48" checked/> 48×48</label>
+      <label><input type="checkbox" id="s96" checked/> 96×96</label>
+      <label><input type="checkbox" id="s192" checked/> 192×192</label>
+      <label><input type="checkbox" id="s512"/> 512×512</label>
+    </div>`+
+    BTN('runFavicon','⚡ Generate All Favicons'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._fvFile=f[0]})},
+
+// ── VIDEO TOOLS ────────────────────────
+'vid-audio':{icon:'🎵',title:'Extract Audio from Video',
+  html:()=>WB('First use downloads FFmpeg (~20MB). All subsequent uses are instant.')+
+    SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    CR('Output format',SEL('af',[['mp3','MP3 — most compatible'],['wav','WAV — lossless'],['ogg','OGG — open format']]))+
+    BTN('runAudio','⚡ Extract Audio'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vaFile=f[0]})},
+
+'vid-trim':{icon:'✂️',title:'Trim Video',
+  html:()=>WB('First use downloads FFmpeg (~20MB).')+
+    SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    `<div class="ctrl-row"><label>Start (mm:ss)</label><input type="text" id="vs" value="0:00" style="flex:none;width:80px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:.4rem .7rem;font-size:.8rem;outline:none"/>
+     <label>End (mm:ss)</label><input type="text" id="ve" value="0:30" style="flex:none;width:80px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:.4rem .7rem;font-size:.8rem;outline:none"/></div>`+
+    CR('Save as',SEL('vf',[['mp4','MP4'],['webm','WEBM']]))+
+    BTN('runTrim','⚡ Trim & Download'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vtFile=f[0]})},
+
+'vid-compress':{icon:'🗜️',title:'Compress Video',
+  html:()=>WB('Large videos may take a few minutes. Keep the tab open.')+
+    SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    CR('Quality (CRF)',SEL('crf',[['18','18 — High quality'],['23','23 — Balanced (recommended)'],['28','28 — Smaller file'],['35','35 — Minimum size']]))+
+    CR('Resolution',SEL('res',[['','Keep original'],['1280x720','720p HD'],['854x480','480p'],['640x360','360p']]))+
+    BTN('runVCompress','⚡ Compress Video'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vcFile=f[0]})},
+
+'vid-gif':{icon:'🎞️',title:'Video to GIF',
+  html:()=>SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    `<div class="ctrl-row"><label>Start (s)</label>${NUM('gs',0,0,null,'65px')}
+     <label>Duration (s)</label>${NUM('gd',5,1,30,'65px')}
+     <label>FPS</label>${SEL('gfps',[['10','10 fps'],['15','15 fps'],['24','24 fps']])}</div>`+
+    CR('GIF width (px)',NUM('gw',480,100,1280,'80px'))+
+    BTN('runGif','⚡ Create GIF'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vgFile=f[0]})},
+
+'vid-speed':{icon:'⚡',title:'Change Video Speed',
+  html:()=>SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    CR('Speed',SEL('spd',[['0.25','0.25× — Very slow motion'],['0.5','0.5× — Slow motion'],['0.75','0.75× — Slightly slow'],['1.5','1.5× — Slightly fast'],['2','2× — Double speed'],['4','4× — Timelapse']]))+
+    `<div class="ctrl-row"><label><input type="checkbox" id="kaudio" checked/> Keep audio (pitch-corrected)</label></div>`+
+    BTN('runSpeed','⚡ Change Speed'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vsFile=f[0]})},
+
+'vid-mute':{icon:'🔇',title:'Mute Video',
+  html:()=>SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    CR('Save as',SEL('mf',[['mp4','MP4'],['webm','WEBM']]))+
+    BTN('runMute','⚡ Remove Audio Track'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vmFile=f[0]})},
+
+'vid-watermark':{icon:'💧',title:'Watermark Video',
+  html:()=>SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    CR('Watermark text',`<input type="text" id="vwt" value="© My Brand" style="flex:1"/>`)+
+    CR('Position',SEL('vwp',[['10:main_h-th-10','Bottom Left'],['main_w-tw-10:main_h-th-10','Bottom Right'],['10:10','Top Left'],['main_w-tw-10:10','Top Right']]))+
+    CR('Font size',NUM('vwfs',32,12,120,'75px'))+
+    BTN('runVWatermark','⚡ Burn Watermark'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vwFile=f[0]})},
+
+'vid-reverse':{icon:'⏪',title:'Reverse Video',
+  html:()=>WB('Reversing is CPU-intensive. Keep clips under 60s for best results.')+
+    SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    `<div class="ctrl-row"><label><input type="checkbox" id="rvaudio"/> Also reverse audio track</label></div>`+
+    BTN('runReverse','⚡ Reverse Video'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vrFile=f[0]})},
+
+'vid-frames':{icon:'📸',title:'Extract Video Frames',
+  html:()=>SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    `<div class="ctrl-row"><label>Every N seconds</label><input type="number" id="fint" value="1" min="0.1" step="0.1" style="width:80px;flex:none;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:.4rem .7rem;font-size:.8rem;outline:none"/>
+     <label>Format</label>${SEL('ffmt2',[['png','PNG'],['jpg','JPG']])}</div>`+
+    CR('Max frames',NUM('fmax',20,1,100,'75px'))+
+    BTN('runFrames','⚡ Extract Frames'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vfFile=f[0]})},
+
+'vid-convert':{icon:'🔀',title:'Convert Video Format',
+  html:()=>SL('Upload Video')+DZ('video/*',false)+FC(false)+
+    CR('Convert to',SEL('cvf',[['mp4','MP4 — H.264 (universal)'],['webm','WEBM — VP9 (web)'],['mp4h265','MP4 — H.265 (smaller file)']]))+
+    CR('Quality',SEL('cvcrf',[['18','High'],['23','Medium (recommended)'],['28','Low (smallest)']]))+
+    BTN('runVConvert','⚡ Convert Format'),
+  init:()=>dzSetup('dz','fi',f=>{showFiles(document.getElementById('fc'),f);document.getElementById('gb').disabled=false;window._vcoFile=f[0]})}
+};
+
+// ══════════════════════════════════════════
+// RUNNERS
+// ══════════════════════════════════════════
+
+// PDF → Images
+async function runP2I(){
+  const f=window._p2iFile;if(!f)return;
+  const fmt=document.getElementById('fmt').value;
+  const sc=parseFloat(document.getElementById('sc').value);
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const ab=await readAB(f);const pdf=await pdfjsLib.getDocument({data:ab}).promise;
+    const tot=pdf.numPages;const base=f.name.replace(/\.pdf$/i,'');
+    for(let i=1;i<=tot;i++){
+      prg('pf','pb',Math.round((i/tot)*100));
+      const page=await pdf.getPage(i);const vp=page.getViewport({scale:sc});
+      canvas.width=vp.width;canvas.height=vp.height;
+      await page.render({canvasContext:ctx,viewport:vp}).promise;
+      dl(canvas.toDataURL('image/'+(fmt==='jpeg'?'jpeg':'png'),0.95),`${base}_page${i}.${fmt==='jpeg'?'jpg':'png'}`);
+      await new Promise(r=>setTimeout(r,50));
+    }
+    hidePrg('pb');ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Images → PDF
+async function runI2P(){
+  const files=window._i2pFiles;if(!files||!files.length)return;
+  const sz=document.getElementById('sz').value;const mg=parseInt(document.getElementById('mg').value);
+  try{
+    prg('pf','pb',10);const{PDFDocument}=PDFLib;const doc=await PDFDocument.create();
+    for(let i=0;i<files.length;i++){
+      prg('pf','pb',10+Math.round((i/files.length)*80));
+      const ab=await readAB(files[i]);let img,dims;
+      if(files[i].type==='image/jpeg'){img=await doc.embedJpg(ab);dims=img.scale(1)}
+      else{
+        const c=document.getElementById('work-canvas');const cx=c.getContext('2d');
+        const im=await loadImg(files[i]);c.width=im.width;c.height=im.height;cx.drawImage(im,0,0);
+        const bl=await new Promise(r=>c.toBlob(r,'image/png'));
+        img=await doc.embedPng(await bl.arrayBuffer());dims=img.scale(1);
+      }
+      let pw,ph;
+      if(sz==='a4'){pw=595;ph=842}else if(sz==='letter'){pw=612;ph=792}else{pw=dims.width+mg*2;ph=dims.height+mg*2}
+      const pg=doc.addPage([pw,ph]);
+      const sc2=Math.min((pw-mg*2)/dims.width,(ph-mg*2)/dims.height);
+      pg.drawImage(img,{x:(pw-dims.width*sc2)/2,y:(ph-dims.height*sc2)/2,width:dims.width*sc2,height:dims.height*sc2});
+    }
+    prg('pf','pb',95);dl(URL.createObjectURL(new Blob([await doc.save()],{type:'application/pdf'})),'converted.pdf');
+    hidePrg('pb');ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Merge PDFs
+async function runMerge(){
+  const files=window._mrgFiles;if(!files||!files.length)return;
+  try{
+    prg('pf','pb',10);const{PDFDocument}=PDFLib;const merged=await PDFDocument.create();
+    for(let i=0;i<files.length;i++){
+      prg('pf','pb',10+Math.round((i/files.length)*80));
+      const src=await PDFDocument.load(await readAB(files[i]));
+      const pgs=await merged.copyPages(src,src.getPageIndices());
+      pgs.forEach(p=>merged.addPage(p));
+    }
+    dl(URL.createObjectURL(new Blob([await merged.save()],{type:'application/pdf'})),'merged.pdf');
+    hidePrg('pb');ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Split PDF
+async function runSplit(){
+  const f=window._splFile;if(!f)return;
+  const mode=document.getElementById('md').value;
+  try{
+    const{PDFDocument}=PDFLib;const src=await PDFDocument.load(await readAB(f));
+    const tot=src.getPageCount();const base=f.name.replace(/\.pdf$/i,'');
+    if(mode==='all'){
+      for(let i=0;i<tot;i++){
+        prg('pf','pb',Math.round(((i+1)/tot)*100));
+        const nd=await PDFDocument.create();const[pg]=await nd.copyPages(src,[i]);nd.addPage(pg);
+        dl(URL.createObjectURL(new Blob([await nd.save()],{type:'application/pdf'})),`${base}_p${i+1}.pdf`);
+        await new Promise(r=>setTimeout(r,40));
+      }
+    }else{
+      const fr=Math.max(0,parseInt(document.getElementById('sf').value)-1);
+      const to=Math.min(tot-1,parseInt(document.getElementById('st').value)-1);
+      const nd=await PDFDocument.create();
+      const pgs=await nd.copyPages(src,Array.from({length:to-fr+1},(_,i)=>fr+i));
+      pgs.forEach(p=>nd.addPage(p));
+      dl(URL.createObjectURL(new Blob([await nd.save()],{type:'application/pdf'})),`${base}_p${fr+1}-${to+1}.pdf`);
+    }
+    hidePrg('pb');ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Rotate PDF
+async function runRotatePDF(){
+  const f=window._rotFile;if(!f)return;
+  try{
+    const{PDFDocument,degrees}=PDFLib;const doc=await PDFDocument.load(await readAB(f));
+    const rot=parseInt(document.getElementById('rot').value);
+    const pgs=document.getElementById('pgs').value;
+    doc.getPages().forEach((pg,i)=>{
+      if(pgs==='all'||(pgs==='odd'&&(i+1)%2!==0)||(pgs==='even'&&(i+1)%2===0))
+        pg.setRotation(degrees((pg.getRotation().angle+rot)%360));
+    });
+    dl(URL.createObjectURL(new Blob([await doc.save()],{type:'application/pdf'})),f.name.replace(/\.pdf$/i,'')+'_rotated.pdf');
+    ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Compress PDF
+async function runCompressPDF(){
+  const f=window._cmpFile;if(!f)return;
+  try{
+    prg('pf','pb',20);const{PDFDocument}=PDFLib;
+    const doc=await PDFDocument.load(await readAB(f),{ignoreEncryption:true});
+    prg('pf','pb',60);
+    const bytes=await doc.save({useObjectStreams:true,addDefaultPage:false,objectsPerTick:50});
+    dl(URL.createObjectURL(new Blob([bytes],{type:'application/pdf'})),f.name.replace(/\.pdf$/i,'')+'_compressed.pdf');
+    hidePrg('pb');ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Watermark PDF
+async function runWatermarkPDF(){
+  const f=window._wmFile;if(!f)return;
+  try{
+    prg('pf','pb',10);const{PDFDocument,rgb,StandardFonts}=PDFLib;
+    const doc=await PDFDocument.load(await readAB(f));
+    const font=await doc.embedFont(StandardFonts.HelveticaBold);
+    const text=document.getElementById('wt').value||'WATERMARK';
+    const opacity=parseInt(document.getElementById('wo').value)/100;
+    const size=parseInt(document.getElementById('ws').value);
+    const col=document.getElementById('wc').value.split(',').map(Number);
+    doc.getPages().forEach(pg=>{
+      const{width,height}=pg.getSize();
+      pg.drawText(text,{x:(width-font.widthOfTextAtSize(text,size))/2,y:height/2,size,font,
+        color:rgb(col[0]/255,col[1]/255,col[2]/255),opacity,rotate:{type:'degrees',angle:45}});
+    });
+    prg('pf','pb',90);
+    dl(URL.createObjectURL(new Blob([await doc.save()],{type:'application/pdf'})),f.name.replace(/\.pdf$/i,'')+'_watermarked.pdf');
+    hidePrg('pb');ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Add Page Numbers
+async function runPageNums(){
+  const f=window._pnFile;if(!f)return;
+  try{
+    const{PDFDocument,rgb,StandardFonts}=PDFLib;const doc=await PDFDocument.load(await readAB(f));
+    const font=await doc.embedFont(StandardFonts.Helvetica);
+    const pos=document.getElementById('pos').value;const start=parseInt(document.getElementById('sn').value);
+    const fmt=document.getElementById('pf2').value;
+    doc.getPages().forEach((pg,i)=>{
+      const{width,height}=pg.getSize();
+      const lbl=fmt==='page'?`Page ${start+i}`:`${start+i}`;
+      const tw=font.widthOfTextAtSize(lbl,11);
+      let x=width/2-tw/2,y=20;
+      if(pos==='top-center')y=height-25;if(pos==='bottom-right')x=width-tw-20;
+      pg.drawText(lbl,{x,y,size:11,font,color:rgb(0.4,0.4,0.4)});
+    });
+    dl(URL.createObjectURL(new Blob([await doc.save()],{type:'application/pdf'})),f.name.replace(/\.pdf$/i,'')+'_numbered.pdf');
+    ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// PDF to Text
+async function runP2T(){
+  const f=window._p2tFile;if(!f)return;
+  try{
+    prg('pf','pb',5);const ab=await readAB(f);const pdf=await pdfjsLib.getDocument({data:ab}).promise;
+    let all='';
+    for(let i=1;i<=pdf.numPages;i++){
+      prg('pf','pb',Math.round((i/pdf.numPages)*95));
+      const pg=await pdf.getPage(i);const tc=await pg.getTextContent();
+      all+=`\n--- Page ${i} ---\n`+tc.items.map(it=>it.str).join(' ')+'\n';
+    }
+    hidePrg('pb');
+    const ta=document.getElementById('txt');
+    ta.value=all.trim()||'(No selectable text found — this may be a scanned PDF)';
+    ta.style.display='block';document.getElementById('cpb').style.display='flex';
+  }catch(e){er('eb',e.message)}
+}
+
+// PDF Info
+async function runInfo(){
+  const f=window._infoFile;if(!f)return;
+  try{
+    const ab=await readAB(f);const pdf=await pdfjsLib.getDocument({data:ab}).promise;
+    const pg1=await pdf.getPage(1);const vp=pg1.getViewport({scale:1});
+    const meta=await pdf.getMetadata().catch(()=>({info:{}}));
+    const rows=[['📄 File name',f.name],['📦 File size',fmtSz(f.size)],['📑 Total pages',pdf.numPages+' pages'],
+      ['📐 Page 1 size',`${Math.round(vp.width)} × ${Math.round(vp.height)} pts`],
+      ['📝 Title',meta.info.Title||'—'],['✍️ Author',meta.info.Author||'—'],['⚙️ Creator',meta.info.Creator||'—'],
+      ['📅 Modified',meta.info.ModDate||'—']];
+    document.getElementById('infores').innerHTML=`<div style="display:flex;flex-direction:column;gap:.45rem">
+      ${rows.map(([k,v])=>`<div style="display:flex;gap:.75rem;padding:.5rem .75rem;background:var(--bg3);border-radius:7px;font-size:.8rem">
+        <span style="color:var(--text3);width:150px;flex-shrink:0">${k}</span><strong style="color:var(--text)">${v}</strong></div>`).join('')}
+    </div>`;
+    document.getElementById('infores').style.display='block';
+  }catch(e){er('eb',e.message)}
+}
+
+// Image Format Converter
+async function runImgConvert(){
+  const files=window._icFiles;if(!files)return;
+  const fmt=document.getElementById('fmt').value;const q=parseFloat(document.getElementById('q').value);
+  const ext=fmt.split('/')[1]==='jpeg'?'jpg':fmt.split('/')[1];
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    for(let i=0;i<files.length;i++){
+      prg('pf','pb',Math.round(((i+1)/files.length)*100));
+      const img=await loadImg(files[i]);canvas.width=img.width;canvas.height=img.height;ctx.drawImage(img,0,0);
+      dl(canvas.toDataURL(fmt,q),files[i].name.replace(/\.[^.]+$/,'.')+ext);
+      await new Promise(r=>setTimeout(r,40));
+    }
+    hidePrg('pb');ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Resize
+async function runResize(){
+  const f=window._rsFile;if(!f)return;
+  const mode=document.getElementById('md').value;const fmt=document.getElementById('rfmt').value;
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const img=await loadImg(f);let tw,th;
+    if(mode==='pct'){const pct=parseFloat(document.getElementById('rpct').value)/100;tw=Math.round(img.width*pct);th=Math.round(img.height*pct)}
+    else{tw=parseInt(document.getElementById('rw').value);th=parseInt(document.getElementById('rh').value);if(document.getElementById('lr').checked)th=Math.round(tw/img.width*img.height)}
+    canvas.width=tw;canvas.height=th;ctx.drawImage(img,0,0,tw,th);
+    const ext=fmt.split('/')[1]==='jpeg'?'jpg':fmt.split('/')[1];
+    dl(canvas.toDataURL(fmt,0.95),f.name.replace(/\.[^.]+$/,'')+'_'+tw+'x'+th+'.'+ext);ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Compress
+async function runCompress(){
+  const files=window._cmFiles;if(!files)return;
+  const q=parseInt(document.getElementById('cq').value)/100;const mw=parseInt(document.getElementById('mw').value);
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    for(let i=0;i<files.length;i++){
+      prg('pf','pb',Math.round(((i+1)/files.length)*100));
+      const img=await loadImg(files[i]);let w=img.width,h=img.height;
+      if(mw>0&&w>mw){h=Math.round(h*mw/w);w=mw}
+      canvas.width=w;canvas.height=h;ctx.drawImage(img,0,0,w,h);
+      dl(canvas.toDataURL('image/jpeg',q),files[i].name.replace(/\.[^.]+$/,'')+'_compressed.jpg');
+      await new Promise(r=>setTimeout(r,40));
+    }
+    hidePrg('pb');ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Crop
+async function runCrop(){
+  const f=window._crFile;if(!f)return;
+  const x=parseInt(document.getElementById('cx').value),y=parseInt(document.getElementById('cy').value);
+  const w=parseInt(document.getElementById('cw').value),h=parseInt(document.getElementById('ch').value);
+  const fmt=document.getElementById('cfmt').value;
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const img=await loadImg(f);canvas.width=w;canvas.height=h;ctx.drawImage(img,x,y,w,h,0,0,w,h);
+    const ext=fmt.split('/')[1]==='jpeg'?'jpg':fmt.split('/')[1];
+    dl(canvas.toDataURL(fmt,0.95),f.name.replace(/\.[^.]+$/,'')+'_cropped.'+ext);ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Rotate & Flip
+async function runRotate(){
+  const f=window._rtFile;if(!f)return;
+  const deg=parseInt(document.getElementById('rota').value);
+  const fh=document.getElementById('fh').checked,fv=document.getElementById('fv').checked;
+  const fmt=document.getElementById('rfmt').value;
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const img=await loadImg(f);const swap=deg===90||deg===270;
+    const w=swap?img.height:img.width,h=swap?img.width:img.height;
+    canvas.width=w;canvas.height=h;ctx.save();ctx.translate(w/2,h/2);ctx.rotate(deg*Math.PI/180);
+    if(fh)ctx.scale(-1,1);if(fv)ctx.scale(1,-1);ctx.drawImage(img,-img.width/2,-img.height/2);ctx.restore();
+    const ext=fmt.split('/')[1]==='jpeg'?'jpg':fmt.split('/')[1];
+    dl(canvas.toDataURL(fmt,0.95),f.name.replace(/\.[^.]+$/,'')+'_transformed.'+ext);ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Watermark Image
+async function runWatermark(){
+  const f=window._wmgFile;if(!f)return;
+  const text=document.getElementById('wt').value;const pos=document.getElementById('wp').value;
+  const size=parseInt(document.getElementById('wfs').value);const opacity=parseInt(document.getElementById('wo').value)/100;
+  const color=document.getElementById('wc').value;const fmt=document.getElementById('wfmt').value;
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const img=await loadImg(f);canvas.width=img.width;canvas.height=img.height;ctx.drawImage(img,0,0);
+    ctx.font=`bold ${size}px sans-serif`;ctx.fillStyle=color;ctx.globalAlpha=opacity;
+    const tw=ctx.measureText(text).width;const pad=16;let x,y;
+    if(pos==='br'){x=canvas.width-tw-pad;y=canvas.height-pad}
+    else if(pos==='bl'){x=pad;y=canvas.height-pad}
+    else if(pos==='tr'){x=canvas.width-tw-pad;y=size+pad}
+    else if(pos==='tl'){x=pad;y=size+pad}
+    else{x=(canvas.width-tw)/2;y=(canvas.height+size)/2}
+    ctx.fillText(text,x,y);ctx.globalAlpha=1;
+    const ext=fmt.split('/')[1]==='jpeg'?'jpg':fmt.split('/')[1];
+    dl(canvas.toDataURL(fmt,0.95),f.name.replace(/\.[^.]+$/,'')+'_watermarked.'+ext);ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Filter selection
+function selFilt(id){
+  document.getElementById('selFiltVal').value=id;
+  document.querySelectorAll('[id^="fb-"]').forEach(b=>{b.style.borderColor='var(--border)';b.style.color='var(--text2)'});
+  const btn=document.getElementById('fb-'+id);
+  if(btn){btn.style.borderColor='var(--accent)';btn.style.color='var(--text)'}
+  const showAmt=['blur','sharpen','brightness','darken'].includes(id);
+  const row=document.getElementById('famt-row');if(row)row.style.display=showAmt?'flex':'none';
+}
+
+// Apply Filter
+async function runFilter(){
+  const f=window._flFile;if(!f)return;
+  const filter=document.getElementById('selFiltVal').value;
+  const amount=parseInt(document.getElementById('famt').value||5);
+  const fmt=document.getElementById('ffmt').value;
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const img=await loadImg(f);canvas.width=img.width;canvas.height=img.height;
+    if(filter==='blur'){ctx.filter=`blur(${amount}px)`;ctx.drawImage(img,0,0);ctx.filter='none'}
+    else if(filter==='brightness'){ctx.filter=`brightness(${1+amount*0.1})`;ctx.drawImage(img,0,0);ctx.filter='none'}
+    else if(filter==='darken'){ctx.filter=`brightness(${1-amount*0.05})`;ctx.drawImage(img,0,0);ctx.filter='none'}
+    else if(filter==='warm'){
+      ctx.drawImage(img,0,0);const id=ctx.getImageData(0,0,canvas.width,canvas.height);const d=id.data;
+      for(let i=0;i<d.length;i+=4){d[i]=Math.min(255,d[i]+20);d[i+2]=Math.max(0,d[i+2]-20)}
+      ctx.putImageData(id,0,0);
+    }else if(filter==='cool'){
+      ctx.drawImage(img,0,0);const id=ctx.getImageData(0,0,canvas.width,canvas.height);const d=id.data;
+      for(let i=0;i<d.length;i+=4){d[i]=Math.max(0,d[i]-20);d[i+2]=Math.min(255,d[i+2]+20)}
+      ctx.putImageData(id,0,0);
+    }else if(filter==='grayscale'){
+      ctx.drawImage(img,0,0);const id=ctx.getImageData(0,0,canvas.width,canvas.height);const d=id.data;
+      for(let i=0;i<d.length;i+=4){const v=0.299*d[i]+0.587*d[i+1]+0.114*d[i+2];d[i]=d[i+1]=d[i+2]=v}
+      ctx.putImageData(id,0,0);
+    }else if(filter==='sepia'){
+      ctx.drawImage(img,0,0);const id=ctx.getImageData(0,0,canvas.width,canvas.height);const d=id.data;
+      for(let i=0;i<d.length;i+=4){const r=d[i],g=d[i+1],b=d[i+2];
+        d[i]=Math.min(255,r*.393+g*.769+b*.189);d[i+1]=Math.min(255,r*.349+g*.686+b*.168);d[i+2]=Math.min(255,r*.272+g*.534+b*.131)}
+      ctx.putImageData(id,0,0);
+    }else if(filter==='invert'){
+      ctx.drawImage(img,0,0);const id=ctx.getImageData(0,0,canvas.width,canvas.height);const d=id.data;
+      for(let i=0;i<d.length;i+=4){d[i]=255-d[i];d[i+1]=255-d[i+1];d[i+2]=255-d[i+2]}
+      ctx.putImageData(id,0,0);
+    }else if(filter==='sharpen'){
+      ctx.drawImage(img,0,0);
+      const kern=[-1,-1,-1,-1,8+amount,-1,-1,-1,-1];
+      const id=ctx.getImageData(0,0,canvas.width,canvas.height);
+      const src=new Uint8ClampedArray(id.data);const dst=id.data;const W=canvas.width,H=canvas.height;
+      for(let y=1;y<H-1;y++)for(let x=1;x<W-1;x++){const p=(y*W+x)*4;
+        for(let c=0;c<3;c++){let s=0;for(let ky=-1;ky<=1;ky++)for(let kx=-1;kx<=1;kx++)s+=src[((y+ky)*W+(x+kx))*4+c]*kern[(ky+1)*3+(kx+1)];dst[p+c]=Math.max(0,Math.min(255,s))}}
+      ctx.putImageData(id,0,0);
+    }else if(filter==='emboss'){
+      ctx.drawImage(img,0,0);
+      const kern=[-2,-1,0,-1,1,1,0,1,2];
+      const id=ctx.getImageData(0,0,canvas.width,canvas.height);
+      const src=new Uint8ClampedArray(id.data);const dst=id.data;const W=canvas.width,H=canvas.height;
+      for(let y=1;y<H-1;y++)for(let x=1;x<W-1;x++){const p=(y*W+x)*4;
+        for(let c=0;c<3;c++){let s=128;for(let ky=-1;ky<=1;ky++)for(let kx=-1;kx<=1;kx++)s+=src[((y+ky)*W+(x+kx))*4+c]*kern[(ky+1)*3+(kx+1)];dst[p+c]=Math.max(0,Math.min(255,s))}}
+      ctx.putImageData(id,0,0);
+    }
+    const ext=fmt.split('/')[1]==='jpeg'?'jpg':fmt.split('/')[1];
+    dl(canvas.toDataURL(fmt,0.95),f.name.replace(/\.[^.]+$/,'')+'_'+filter+'.'+ext);ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Border
+async function runBorder(){
+  const f=window._bdFile;if(!f)return;
+  const bw=parseInt(document.getElementById('bw').value);const bc=document.getElementById('bc').value;
+  const bs=document.getElementById('bs').value;const fmt=document.getElementById('bfmt').value;
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const img=await loadImg(f);canvas.width=img.width+bw*2;canvas.height=img.height+bw*2;
+    ctx.fillStyle=bc;ctx.fillRect(0,0,canvas.width,canvas.height);
+    if(bs==='double'){ctx.fillStyle='rgba(255,255,255,0.5)';ctx.fillRect(bw-4,bw-4,img.width+8,img.height+8)}
+    ctx.drawImage(img,bw,bw);
+    const ext=fmt.split('/')[1]==='jpeg'?'jpg':fmt.split('/')[1];
+    dl(canvas.toDataURL(fmt,0.95),f.name.replace(/\.[^.]+$/,'')+'_bordered.'+ext);ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Brightness/Contrast/Saturation
+async function runBrightness(){
+  const f=window._bcFile;if(!f)return;
+  const br=parseFloat(document.getElementById('brr').value);
+  const ct=parseFloat(document.getElementById('ctr').value);
+  const sat=parseFloat(document.getElementById('satr').value);
+  const fmt=document.getElementById('bcfmt').value;
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const img=await loadImg(f);canvas.width=img.width;canvas.height=img.height;
+    ctx.filter=`brightness(${1+br/100}) contrast(${1+ct/100}) saturate(${1+sat/100})`;
+    ctx.drawImage(img,0,0);ctx.filter='none';
+    const ext=fmt.split('/')[1]==='jpeg'?'jpg':fmt.split('/')[1];
+    dl(canvas.toDataURL(fmt,0.95),f.name.replace(/\.[^.]+$/,'')+'_adjusted.'+ext);ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// Base64
+function runBase64(){
+  const f=window._b64File;if(!f)return;
+  const fmtOut=document.getElementById('b64fmt').value;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    let out=e.target.result;
+    if(fmtOut==='raw')out=out.split(',')[1];
+    else if(fmtOut==='css')out=`background-image: url('${out}');`;
+    document.getElementById('b64out').value=out;
+    document.getElementById('b64out').style.display='block';
+    document.getElementById('cpb64').style.display='flex';
+  };
+  reader.readAsDataURL(f);
+}
+
+// Favicon
+async function runFavicon(){
+  const f=window._fvFile;if(!f)return;
+  const sizes=[16,32,48,96,192,512].filter(s=>{const el=document.getElementById('s'+s);return el&&el.checked});
+  const canvas=document.getElementById('work-canvas');const ctx=canvas.getContext('2d');
+  try{
+    const img=await loadImg(f);
+    for(const s of sizes){
+      canvas.width=s;canvas.height=s;ctx.drawImage(img,0,0,s,s);
+      dl(canvas.toDataURL('image/png'),`favicon-${s}x${s}.png`);
+      await new Promise(r=>setTimeout(r,40));
+    }
+    ok('rb');
+  }catch(e){er('eb',e.message)}
+}
+
+// ── Video runners ──
+async function runAudio(){const f=window._vaFile;if(!f)return;const af=document.getElementById('af').value;const ext=f.name.split('.').pop();await runFF(f,'input.'+ext,['-i','input.'+ext,'-vn','-acodec',af==='mp3'?'libmp3lame':af==='wav'?'pcm_s16le':'libvorbis','out.'+af],'out.'+af,'pf','pb','rb','eb')}
+async function runTrim(){const f=window._vtFile;if(!f)return;const s=mmss(document.getElementById('vs').value);const e2=mmss(document.getElementById('ve').value);if(e2<=s){er('eb','End time must be after start');return}const vf=document.getElementById('vf').value;const ext=f.name.split('.').pop();await runFF(f,'input.'+ext,['-i','input.'+ext,'-ss',String(s),'-t',String(e2-s),'-c','copy','out.'+vf],'out.'+vf,'pf','pb','rb','eb')}
+async function runVCompress(){const f=window._vcFile;if(!f)return;const crf=document.getElementById('crf').value;const res=document.getElementById('res').value;const ext=f.name.split('.').pop();const cmd=['-i','input.'+ext,'-vcodec','libx264','-crf',crf];if(res)cmd.push('-vf','scale='+res);cmd.push('out.mp4');await runFF(f,'input.'+ext,cmd,'out.mp4','pf','pb','rb','eb')}
+async function runGif(){const f=window._vgFile;if(!f)return;const s=parseFloat(document.getElementById('gs').value);const dur=parseFloat(document.getElementById('gd').value);const fps=document.getElementById('gfps').value;const w=document.getElementById('gw').value;const ext=f.name.split('.').pop();await runFF(f,'input.'+ext,['-i','input.'+ext,'-ss',String(s),'-t',String(dur),'-vf',`fps=${fps},scale=${w}:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse`,'out.gif'],'out.gif','pf','pb','rb','eb')}
+async function runSpeed(){const f=window._vsFile;if(!f)return;const spd=parseFloat(document.getElementById('spd').value);const ext=f.name.split('.').pop();const cmd=['-i','input.'+ext,'-filter_complex',`[0:v]setpts=${(1/spd).toFixed(4)}*PTS[v];[0:a]atempo=${Math.min(2,Math.max(0.5,spd))}[a]`,'-map','[v]','-map','[a]','out.mp4'];await runFF(f,'input.'+ext,cmd,'out.mp4','pf','pb','rb','eb')}
+async function runMute(){const f=window._vmFile;if(!f)return;const mf=document.getElementById('mf').value;const ext=f.name.split('.').pop();await runFF(f,'input.'+ext,['-i','input.'+ext,'-an','-c:v','copy','out.'+mf],'out.'+mf,'pf','pb','rb','eb')}
+async function runVWatermark(){const f=window._vwFile;if(!f)return;const text=(document.getElementById('vwt').value||'Watermark').replace(/'/g,"\\'");const pos=document.getElementById('vwp').value;const fs=document.getElementById('vwfs').value;const ext=f.name.split('.').pop();await runFF(f,'input.'+ext,['-i','input.'+ext,'-vf',`drawtext=text='${text}':fontcolor=white:fontsize=${fs}:x=${pos.split(':')[0]}:y=${pos.split(':')[1]}:shadowcolor=black:shadowx=2:shadowy=2`,'-codec:a','copy','out.mp4'],'out.mp4','pf','pb','rb','eb')}
+async function runReverse(){const f=window._vrFile;if(!f)return;const revA=document.getElementById('rvaudio').checked;const ext=f.name.split('.').pop();const cmd=['-i','input.'+ext,'-vf','reverse'];if(revA)cmd.push('-af','areverse');cmd.push('out.mp4');await runFF(f,'input.'+ext,cmd,'out.mp4','pf','pb','rb','eb')}
+async function runFrames(){const f=window._vfFile;if(!f)return;const interval=parseFloat(document.getElementById('fint').value||1);const maxF=parseInt(document.getElementById('fmax').value||20);const ffmt2=document.getElementById('ffmt2').value;const ext=f.name.split('.').pop();await runFF(f,'input.'+ext,['-i','input.'+ext,'-vf',`fps=1/${interval}`,'-frames:v',String(maxF),`frame_%03d.${ffmt2}`],`frame_001.${ffmt2}`,'pf','pb','rb','eb')}
+async function runVConvert(){const f=window._vcoFile;if(!f)return;const cvf=document.getElementById('cvf').value;const crf=document.getElementById('cvcrf').value;const ext=f.name.split('.').pop();const isH265=cvf==='mp4h265';const out=cvf==='webm'?'out.webm':'out.mp4';const codec=isH265?'libx265':cvf==='webm'?'libvpx-vp9':'libx264';await runFF(f,'input.'+ext,['-i','input.'+ext,'-c:v',codec,'-crf',crf,'-c:a','copy',out],out,'pf','pb','rb','eb')}
+</script>
+<script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+</body>
+</html>
+
