@@ -121,6 +121,8 @@ h1{display:none}
   border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(99,102,241,0.25)}
 .flt.active-vid{background:linear-gradient(135deg,#059669,#34d399);
   border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(52,211,153,0.25)}
+.flt.active-blog{background:linear-gradient(135deg,#0369a1,#0ea5e9);
+  border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(3,105,161,0.25)}
 .flt .flt-count{background:rgba(255,255,255,0.18);font-size:0.68rem;
   padding:0.05rem 0.45rem;border-radius:100px;font-weight:700}
 
@@ -296,6 +298,7 @@ canvas.hidden{display:none}
   <button class="flt" onclick="filterTools('pdf',this)">📄 PDF <span class="flt-count">10</span></button>
   <button class="flt" onclick="filterTools('img',this)">🖼️ Images <span class="flt-count">12</span></button>
   <button class="flt" onclick="filterTools('vid',this)">🎬 Video <span class="flt-count">10</span></button>
+  <button class="flt" onclick="filterTools('blog',this)">📖 Blog <span class="flt-count">6</span></button>
 </div>
 
 <!-- PDF SECTION -->
@@ -390,9 +393,9 @@ canvas.hidden{display:none}
 </div>
 
 <!-- BLOG SECTION -->
+<div class="tool-section visible" id="sec-all-blog">
 <div class="sec-wrap" id="blog" style="padding-top:0">
-  <h2 class="sec-title">📖 Guides & Tips</h2>
-  <p class="sec-sub">Learn how to get the most out of every tool</p>
+  <div class="section-hd"><div class="section-hd-line left"></div><span class="section-hd-label" style="color:#0369a1;border-color:rgba(3,105,161,0.2);background:rgba(3,105,161,0.06)">📖 Blog & Guides</span><div class="section-hd-line"></div></div>
   <div class="blog-grid">
     <a href="blog-image-upscaler.html" class="blog-card">
       <span class="blog-tag btag-img">🖼️ Image</span>
@@ -431,6 +434,9 @@ canvas.hidden{display:none}
       <span class="blog-read">Try it now →</span>
     </a>
   </div>
+</div>
+
+</div>
 </div>
 
 <!-- BOTTOM AD before footer -->
@@ -482,17 +488,13 @@ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/p
 function filterTools(cat, btn) {
   document.querySelectorAll('.flt').forEach(b => b.className = 'flt');
   btn.className = 'flt active-' + cat;
-  const sections = ['pdf','img','vid'];
+  const sections = ['pdf','img','vid','blog'];
   if (cat === 'all') {
-    sections.forEach(s => {
-      document.getElementById('sec-all-'+s).classList.add('visible');
-      document.querySelectorAll('.section-hd').forEach(h => h.style.display='');
-    });
+    sections.forEach(s => document.getElementById('sec-all-'+s).classList.add('visible'));
   } else {
     sections.forEach(s => {
       const el = document.getElementById('sec-all-'+s);
-      if (s === cat) { el.classList.add('visible'); }
-      else { el.classList.remove('visible'); }
+      s === cat ? el.classList.add('visible') : el.classList.remove('visible');
     });
   }
 }
