@@ -497,6 +497,8 @@ function filterTools(cat, btn) {
       s === cat ? el.classList.add('visible') : el.classList.remove('visible');
     });
   }
+  const firstVisible = document.querySelector('.tool-section.visible');
+  if (firstVisible) firstVisible.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 // ── Nav dropdown ──
