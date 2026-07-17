@@ -21,115 +21,239 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <style>
-:root{--bg:#07070e;--bg2:#0f0f1a;--bg3:#181825;--card:#111120;--border:rgba(140,130,255,0.1);--border2:rgba(140,130,255,0.22);--accent:#7c6fff;--accent2:#ff6bac;--accent3:#00e5b0;--text:#eeeeff;--text2:#9b99cc;--text3:#55537a;--r:14px;--rs:9px}
+:root{
+  --bg:#f0f6ff;--bg2:#ffffff;--bg3:#e8f1fd;--card:#ffffff;
+  --border:rgba(59,130,246,0.15);--border2:rgba(59,130,246,0.35);
+  --accent:#3b82f6;--accent2:#0ea5e9;--accent3:#0284c7;
+  --pdf:#e11d74;--img:#6366f1;--vid:#059669;
+  --text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --r:14px;--rs:9px;
+  --glow:rgba(59,130,246,0.07);
+}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,111,255,0.08),transparent),radial-gradient(ellipse 60% 40% at 80% 110%,rgba(255,107,172,0.07),transparent);pointer-events:none;z-index:0}
-nav{position:sticky;top:0;z-index:200;background:rgba(7,7,14,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);height:60px;display:flex;align-items:center;padding:0 1.5rem;gap:1rem}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap;margin-right:0.5rem}
-.nav-menus{display:flex;gap:0.25rem;flex:1;overflow-x:auto;scrollbar-width:none}
+body::before{content:'';position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 60% 40% at 5% 0%,rgba(59,130,246,0.08),transparent),
+    radial-gradient(ellipse 40% 30% at 95% 100%,rgba(14,165,233,0.06),transparent);
+  pointer-events:none;z-index:0}
+
+/* ── Nav ── */
+nav{position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);height:60px;
+  display:flex;align-items:center;padding:0 1.5rem;gap:1rem;
+  box-shadow:0 1px 12px rgba(59,130,246,0.06)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;
+  background:linear-gradient(135deg,#3b82f6,#0ea5e9);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  white-space:nowrap;margin-right:0.5rem;letter-spacing:-0.5px}
+.nav-menus{display:flex;gap:0.2rem;flex:1;overflow-x:auto;scrollbar-width:none}
 .nav-menus::-webkit-scrollbar{display:none}
 .nav-group{position:relative}
-.nav-trigger{background:transparent;border:none;color:var(--text2);font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;padding:0.4rem 0.75rem;border-radius:7px;cursor:pointer;display:flex;align-items:center;gap:5px;white-space:nowrap;transition:all 0.2s}
-.nav-trigger:hover,.nav-trigger.open{color:var(--text);background:rgba(124,111,255,0.12)}
-.nav-trigger .arr{font-size:0.6rem;transition:transform 0.2s;opacity:0.6}
+.nav-trigger{background:transparent;border:none;color:var(--text2);
+  font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;
+  padding:0.4rem 0.75rem;border-radius:8px;cursor:pointer;
+  display:flex;align-items:center;gap:5px;white-space:nowrap;transition:all 0.2s}
+.nav-trigger:hover,.nav-trigger.open{color:var(--text);background:rgba(59,130,246,0.08)}
+.nav-trigger .arr{font-size:0.6rem;transition:transform 0.2s;opacity:0.5}
 .nav-trigger.open .arr{transform:rotate(180deg)}
-.nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;min-width:260px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:0.5rem;z-index:300;display:none;box-shadow:0 20px 60px rgba(0,0,0,0.6);animation:ddIn 0.18s ease}
-@keyframes ddIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:0;min-width:265px;
+  background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);
+  padding:0.5rem;z-index:300;display:none;
+  box-shadow:0 24px 60px rgba(0,0,0,0.7),0 0 0 1px rgba(56,139,253,0.08);
+  animation:ddIn 0.16s ease}
+@keyframes ddIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .nav-group.open .nav-dropdown{display:block}
-.dd-item{display:flex;align-items:center;gap:10px;padding:0.5rem 0.85rem;border-radius:8px;cursor:pointer;transition:background 0.15s;border:none;background:none;width:100%;text-align:left;color:var(--text2);font-family:'DM Sans',sans-serif;font-size:0.81rem}
-.dd-item:hover{background:rgba(124,111,255,0.1);color:var(--text)}
+.dd-item{display:flex;align-items:center;gap:10px;padding:0.5rem 0.85rem;border-radius:8px;
+  cursor:pointer;transition:background 0.15s;border:none;background:none;
+  width:100%;text-align:left;color:var(--text2);font-family:'DM Sans',sans-serif;font-size:0.81rem}
+.dd-item:hover{background:rgba(59,130,246,0.1);color:var(--text)}
 .dd-item .di{font-size:1rem;width:22px;text-align:center;flex-shrink:0}
 .dd-item .dt strong{display:block;color:var(--text);font-size:0.81rem;font-weight:500}
 .dd-item .dt span{color:var(--text3);font-size:0.7rem}
 .dd-sep{height:1px;background:var(--border);margin:0.3rem 0.5rem}
 .dd-cat{padding:0.3rem 0.85rem;font-size:0.67rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;font-weight:600}
-.ad-slot{background:var(--bg2);border:1px dashed rgba(124,111,255,0.18);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;overflow:hidden;position:relative;z-index:1}
+
+/* ── Ad slots ── */
+.ad-slot{background:rgba(6,21,40,0.6);border:1px dashed rgba(56,139,253,0.12);
+  border-radius:var(--rs);display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:3px;overflow:hidden;position:relative;z-index:1}
 .ad-label{font-size:0.6rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.12em}
 .ad-placeholder{font-size:0.7rem;color:var(--text3)}
-.hero{position:relative;z-index:1;text-align:center;padding:3.5rem 1.5rem 2rem}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,111,255,0.1);border:1px solid rgba(124,111,255,0.25);color:#bbb4ff;font-size:0.75rem;font-weight:500;padding:0.3rem 0.9rem;border-radius:100px;margin-bottom:1.25rem}
-.pulse{width:6px;height:6px;background:var(--accent3);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
-h1{font-family:'Syne',sans-serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:1rem}
-.grad{background:linear-gradient(135deg,var(--accent),var(--accent2) 50%,var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{color:var(--text2);font-size:1rem;max-width:640px;margin:0 auto 1.5rem;line-height:1.7;font-weight:300}
-.pills{display:flex;gap:0.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.pill{background:var(--bg3);border:1px solid var(--border);color:var(--text3);padding:0.3rem 0.85rem;border-radius:100px;font-size:0.75rem;font-weight:500}
-.home-grid{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 1.5rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:0.75rem}
-.home-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1rem;cursor:pointer;transition:all 0.2s;text-align:center}
-.home-card:hover{border-color:var(--border2);background:var(--bg2);transform:translateY(-2px)}
-.hc-icon{font-size:1.5rem;margin-bottom:0.4rem}
-.hc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;color:var(--text);margin-bottom:0.15rem}
-.hc-cat{font-size:0.68rem;color:var(--text3)}
-.cat-badge{display:inline-block;padding:0.12rem 0.45rem;border-radius:4px;font-size:0.62rem;font-weight:600;margin-bottom:0.35rem}
-.cat-pdf{background:rgba(255,107,172,0.12);color:#ff9ec6}
-.cat-img{background:rgba(124,111,255,0.12);color:#bbb4ff}
-.cat-vid{background:rgba(0,229,176,0.12);color:#00e5b0}
-.drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);z-index:400;opacity:0;pointer-events:none;transition:opacity 0.3s}
+
+/* ── Hero — compact strip ── */
+.hero{position:relative;z-index:1;padding:1.4rem 1.5rem 0.8rem;
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:0.75rem}
+.hero-left{}
+.hero-tagline{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:800;
+  letter-spacing:-0.5px;line-height:1.15;margin-bottom:0.25rem}
+.grad{background:linear-gradient(120deg,#60a5fa,#22d3ee);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{color:var(--text2);font-size:0.82rem;font-weight:300;line-height:1.5;max-width:420px}
+.badge{display:none}
+h1{display:none}
+/* ── Stats row ── */
+.stats-row{display:flex;gap:0;flex-shrink:0}
+.stat-item{padding:0.45rem 1rem;border:1px solid var(--border);text-align:center;background:var(--card)}
+.stat-item:first-child{border-radius:10px 0 0 10px}
+.stat-item:last-child{border-radius:0 10px 10px 0}
+.stat-item+.stat-item{border-left:none}
+.stat-num{font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--text);display:block;line-height:1}
+.stat-lbl{font-size:0.6rem;color:var(--text3);display:block;margin-top:0.15rem;text-transform:uppercase;letter-spacing:0.07em}
+@media(max-width:640px){.stats-row{display:none}}
+
+/* ── Category filter tabs ── */
+.filter-bar{position:relative;z-index:1;display:flex;justify-content:center;
+  gap:0.5rem;padding:0 1.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.flt{border:1px solid var(--border);background:#fff;color:var(--text2);
+  font-family:'DM Sans',sans-serif;font-size:0.83rem;font-weight:600;
+  padding:0.55rem 1.4rem;border-radius:100px;cursor:pointer;
+  transition:all 0.2s;display:flex;align-items:center;gap:6px;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.flt:hover{border-color:var(--border2);color:var(--text);background:rgba(59,130,246,0.05)}
+.flt.active-all{background:linear-gradient(135deg,#3b82f6,#06b6d4);
+  border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(59,130,246,0.3)}
+.flt.active-pdf{background:linear-gradient(135deg,#ec4899,#f472b6);
+  border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(236,72,153,0.25)}
+.flt.active-img{background:linear-gradient(135deg,#6366f1,#818cf8);
+  border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(99,102,241,0.25)}
+.flt.active-vid{background:linear-gradient(135deg,#059669,#34d399);
+  border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(52,211,153,0.25)}
+.flt .flt-count{background:rgba(255,255,255,0.18);font-size:0.68rem;
+  padding:0.05rem 0.45rem;border-radius:100px;font-weight:700}
+
+/* ── Section header ── */
+.section-hd{position:relative;z-index:1;max-width:1100px;margin:0 auto;
+  padding:1.5rem 1.5rem 0.75rem;display:flex;align-items:center;gap:1rem}
+.section-hd-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+.section-hd-line.left{background:linear-gradient(270deg,var(--border),transparent)}
+.section-hd-label{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;
+  letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;padding:0.3rem 0.8rem;
+  border-radius:6px;border:1px solid}
+.shd-pdf{color:#e11d74;border-color:rgba(225,29,116,0.2);background:rgba(225,29,116,0.06)}
+.shd-img{color:#6366f1;border-color:rgba(99,102,241,0.2);background:rgba(99,102,241,0.06)}
+.shd-vid{color:#059669;border-color:rgba(5,150,105,0.18);background:rgba(5,150,105,0.05)}
+
+/* ── Tool grid ── */
+.tool-section{display:none}
+.tool-section.visible{display:block}
+.home-grid{position:relative;z-index:1;max-width:1100px;margin:0 auto;
+  padding:0 1.5rem 0.5rem;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.7rem}
+
+/* ── Tool card ── */
+.home-card{background:#fff;border:1px solid var(--border);
+  border-radius:var(--r);padding:1.1rem 0.9rem 0.9rem;
+  cursor:pointer;transition:all 0.22s;text-align:center;position:relative;overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.home-card:hover{transform:translateY(-3px);border-color:var(--border2);
+  box-shadow:0 8px 24px rgba(59,130,246,0.12)}
+.home-card.card-pdf:hover{border-color:rgba(225,29,116,0.3);box-shadow:0 8px 24px rgba(225,29,116,0.1)}
+.home-card.card-img:hover{border-color:rgba(99,102,241,0.35);box-shadow:0 8px 24px rgba(99,102,241,0.1)}
+.home-card.card-vid:hover{border-color:rgba(5,150,105,0.3);box-shadow:0 8px 24px rgba(5,150,105,0.08)}
+.hc-icon-wrap{width:44px;height:44px;border-radius:12px;margin:0 auto 0.6rem;
+  display:flex;align-items:center;justify-content:center;font-size:1.35rem}
+.icon-pdf{background:rgba(225,29,116,0.08);border:1px solid rgba(225,29,116,0.18)}
+.icon-img{background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.18)}
+.icon-vid{background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.18)}
+.icon-new{background:linear-gradient(135deg,rgba(59,130,246,0.12),rgba(14,165,233,0.08));
+  border:1px solid rgba(59,130,246,0.3);box-shadow:0 0 10px rgba(59,130,246,0.1)}
+.hc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.79rem;
+  color:var(--text);margin-bottom:0.15rem;line-height:1.3}
+.hc-cat{font-size:0.65rem;color:var(--text3)}
+.new-badge{position:absolute;top:0.55rem;right:0.55rem;
+  background:linear-gradient(135deg,#3b82f6,#06b6d4);
+  color:#fff;font-size:0.55rem;font-weight:800;letter-spacing:0.06em;
+  padding:0.15rem 0.4rem;border-radius:4px;text-transform:uppercase}
+/* legacy compat */
+.cat-badge{display:none}
+.cat-pdf,.cat-img,.cat-vid{display:none}
+.hc-icon{display:none}
+
+/* ── Drawer ── */
+.drawer-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.5);backdrop-filter:blur(4px);z-index:400;opacity:0;pointer-events:none;transition:opacity 0.3s}
 .drawer-overlay.open{opacity:1;pointer-events:all}
-.drawer{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--bg2);border-top:1px solid var(--border2);border-radius:24px 24px 0 0;max-height:88vh;display:flex;flex-direction:column;transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.32,0.72,0,1)}
+.drawer{position:fixed;bottom:0;left:0;right:0;z-index:500;
+  background:#fff;border-top:1px solid var(--border);
+  border-radius:22px 22px 0 0;max-height:90vh;display:flex;flex-direction:column;
+  transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.32,0.72,0,1);
+  box-shadow:0 -8px 40px rgba(0,0,0,0.12)}
 .drawer.open{transform:translateY(0)}
-.drawer-handle{width:36px;height:4px;background:var(--border2);border-radius:2px;margin:12px auto 0;flex-shrink:0;cursor:grab}
+.drawer-handle{width:36px;height:4px;background:#e2e8f0;border-radius:2px;margin:12px auto 0;flex-shrink:0;cursor:grab}
 .drawer-head{display:flex;align-items:center;gap:12px;padding:1rem 1.5rem 0.75rem;border-bottom:1px solid var(--border);flex-shrink:0}
 .drawer-icon{font-size:1.5rem}
-.drawer-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;flex:1}
-.drawer-close{background:rgba(255,255,255,0.07);border:none;color:var(--text2);border-radius:8px;padding:0.4rem 0.8rem;cursor:pointer;font-size:0.85rem;transition:background 0.2s}
-.drawer-close:hover{background:rgba(255,255,255,0.13);color:var(--text)}
+.drawer-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;flex:1;color:var(--text)}
+.drawer-close{background:#f1f5f9;border:1px solid var(--border);color:var(--text2);border-radius:8px;padding:0.35rem 0.85rem;cursor:pointer;font-size:0.82rem;transition:all 0.2s}
+.drawer-close:hover{background:#e2e8f0;color:var(--text)}
 .drawer-body{overflow-y:auto;flex:1;padding:1.25rem 1.5rem 2rem;display:flex;gap:1.5rem}
 .drawer-body::-webkit-scrollbar{width:4px}
-.drawer-body::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:2px}
+.drawer-body::-webkit-scrollbar-thumb{background:#e2e8f0;border-radius:2px}
 .drawer-main{flex:1;min-width:0}
 .drawer-sidebar{width:310px;flex-shrink:0;display:flex;flex-direction:column;gap:1rem}
 @media(max-width:820px){.drawer-body{flex-direction:column}.drawer-sidebar{width:100%}}
-.slabel{font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.6rem;margin-top:1.1rem}
+.slabel{font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:0.6rem;margin-top:1.1rem}
 .slabel:first-child{margin-top:0}
-.drop-zone{border:2px dashed var(--border2);border-radius:var(--rs);padding:1.75rem 1rem;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(124,111,255,0.02)}
-.drop-zone:hover,.drop-zone.dg{border-color:var(--accent);background:rgba(124,111,255,0.06)}
+.drop-zone{border:2px dashed #cbd5e1;border-radius:var(--rs);padding:1.75rem 1rem;text-align:center;cursor:pointer;transition:all 0.2s;background:#f8faff}
+.drop-zone:hover,.drop-zone.dg{border-color:var(--accent);background:rgba(59,130,246,0.04)}
 .drop-zone input{display:none}
 .dz-icon{font-size:1.8rem;margin-bottom:0.4rem}
 .dz-text{color:var(--text2);font-size:0.83rem}
 .dz-sub{color:var(--text3);font-size:0.72rem;margin-top:0.2rem}
 .ctrl-row{display:flex;gap:0.55rem;align-items:center;margin-bottom:0.65rem;flex-wrap:wrap}
-.ctrl-row label{color:var(--text3);font-size:0.77rem;white-space:nowrap}
-select,input[type=number],input[type=text]{background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:8px;padding:0.4rem 0.7rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;outline:none;transition:border-color 0.2s;flex:1;min-width:65px}
-select:focus,input:focus{border-color:var(--accent)}
+.ctrl-row label{color:var(--text2);font-size:0.77rem;white-space:nowrap;font-weight:500}
+select,input[type=number],input[type=text]{background:#f8faff;border:1px solid #cbd5e1;color:var(--text);border-radius:8px;padding:0.4rem 0.7rem;font-family:'DM Sans',sans-serif;font-size:0.8rem;outline:none;transition:border-color 0.2s;flex:1;min-width:65px}
+select:focus,input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,0.1)}
 input[type=range]{padding:0;height:4px;accent-color:var(--accent);cursor:pointer;flex:1;min-width:80px;background:transparent}
-input[type=color]{padding:2px 4px;height:34px;width:44px;flex:none;cursor:pointer;border-radius:6px;border:1px solid var(--border2);background:var(--bg3)}
+input[type=color]{padding:2px 4px;height:34px;width:44px;flex:none;cursor:pointer;border-radius:6px;border:1px solid #cbd5e1;background:#f8faff}
 input[type=checkbox]{accent-color:var(--accent);width:14px;height:14px;cursor:pointer;flex:none}
-.btn-go{border:none;border-radius:9px;background:linear-gradient(135deg,var(--accent),#a855f7);color:#fff;width:100%;padding:0.72rem;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.88rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:7px;margin-top:0.75rem}
-.btn-go:hover{opacity:0.88;transform:scale(0.99)}
-.btn-go:disabled{opacity:0.38;cursor:not-allowed;transform:none}
-.result-box{background:rgba(0,229,176,0.07);border:1px solid rgba(0,229,176,0.2);border-radius:var(--rs);padding:0.7rem 1rem;color:var(--accent3);font-size:0.8rem;margin-top:0.75rem;display:none;align-items:center;gap:8px}
-.error-box{background:rgba(255,80,80,0.07);border:1px solid rgba(255,80,80,0.2);border-radius:var(--rs);padding:0.7rem 1rem;color:#ff8888;font-size:0.8rem;margin-top:0.75rem;display:none}
-.prog-bar{height:3px;background:var(--border);border-radius:2px;margin-top:0.5rem;overflow:hidden;display:none}
-.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;transition:width 0.3s;width:0%}
+.btn-go{border:none;border-radius:10px;background:linear-gradient(135deg,#3b82f6,#0ea5e9);color:#fff;width:100%;padding:0.75rem;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.88rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:7px;margin-top:0.75rem;box-shadow:0 4px 14px rgba(59,130,246,0.3)}
+.btn-go:hover{opacity:0.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,130,246,0.35)}
+.btn-go:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+.result-box{background:#f0fdf4;border:1px solid #86efac;border-radius:var(--rs);padding:0.7rem 1rem;color:#15803d;font-size:0.8rem;margin-top:0.75rem;display:none;align-items:center;gap:8px}
+.error-box{background:#fff1f2;border:1px solid #fca5a5;border-radius:var(--rs);padding:0.7rem 1rem;color:#dc2626;font-size:0.8rem;margin-top:0.75rem;display:none}
+.prog-bar{height:4px;background:#e2e8f0;border-radius:2px;margin-top:0.5rem;overflow:hidden;display:none}
+.prog-fill{height:100%;background:linear-gradient(90deg,#3b82f6,#0ea5e9);border-radius:2px;transition:width 0.3s;width:0%}
 .file-chips{display:flex;flex-direction:column;gap:0.3rem;margin-top:0.45rem}
-.chip{display:flex;align-items:center;gap:8px;background:var(--bg3);border-radius:6px;padding:0.32rem 0.65rem;font-size:0.75rem;color:var(--text2)}
+.chip{display:flex;align-items:center;gap:8px;background:#f1f5f9;border-radius:6px;padding:0.32rem 0.65rem;font-size:0.75rem;color:var(--text2);border:1px solid var(--border)}
 .chip span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .chip .sz{color:var(--text3);flex-shrink:0}
 .preview-row{display:flex;gap:0.45rem;flex-wrap:wrap;margin-top:0.45rem}
-.prev-thumb{width:52px;height:52px;border-radius:7px;overflow:hidden;background:var(--bg3);border:1px solid var(--border);flex-shrink:0}
+.prev-thumb{width:52px;height:52px;border-radius:7px;overflow:hidden;background:#f1f5f9;border:1px solid var(--border);flex-shrink:0}
 .prev-thumb img{width:100%;height:100%;object-fit:cover}
-.info-box{background:rgba(124,111,255,0.06);border:1px solid rgba(124,111,255,0.15);border-radius:var(--rs);padding:0.65rem 0.9rem;color:var(--text2);font-size:0.78rem;line-height:1.6;margin-bottom:0.65rem}
-.warn-box{background:rgba(255,185,0,0.07);border:1px solid rgba(255,185,0,0.2);border-radius:var(--rs);padding:0.65rem 0.9rem;color:#ffce54;font-size:0.78rem;line-height:1.5;margin-bottom:0.65rem}
-.ad-sidebar{background:var(--bg3);border:1px dashed rgba(124,111,255,0.18);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-height:250px;padding:1rem;text-align:center}
+.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:var(--rs);padding:0.65rem 0.9rem;color:#1d4ed8;font-size:0.78rem;line-height:1.6;margin-bottom:0.65rem}
+.warn-box{background:#fffbeb;border:1px solid #fde68a;border-radius:var(--rs);padding:0.65rem 0.9rem;color:#92400e;font-size:0.78rem;line-height:1.5;margin-bottom:0.65rem}
+.ad-sidebar{background:#f8faff;border:1px dashed #cbd5e1;border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-height:250px;padding:1rem;text-align:center}
 .sec-wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:2rem 1.5rem}
-.sec-title{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:800;text-align:center;margin-bottom:0.4rem}
+.sec-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;text-align:center;margin-bottom:0.4rem;color:var(--text)}
 .sec-sub{color:var(--text2);text-align:center;font-size:0.87rem;margin-bottom:1.6rem}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.85rem}
-.why-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem;text-align:center}
+.why-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;text-align:center;transition:all 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.why-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,0.1)}
 .why-icon{font-size:1.7rem;margin-bottom:0.45rem}
-.why-h{font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.3rem}
+.why-h{font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.3rem;color:var(--text)}
 .why-p{color:var(--text2);font-size:0.77rem;line-height:1.6}
-.faq-item{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);margin-bottom:0.55rem;overflow:hidden;cursor:pointer}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--rs);margin-bottom:0.55rem;overflow:hidden;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
 .faq-item:hover{border-color:var(--border2)}
 .faq-q{width:100%;background:none;border:none;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;text-align:left;padding:0.85rem 1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .faq-q .arr2{color:var(--text3);transition:transform 0.22s;flex-shrink:0}
 .faq-item.open .faq-q .arr2{transform:rotate(180deg);color:var(--accent)}
 .faq-a{display:none;padding:0 1rem 0.85rem;color:var(--text2);font-size:0.81rem;line-height:1.7;border-top:1px solid var(--border)}
 .faq-item.open .faq-a{display:block}
-footer{position:relative;z-index:1;text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--border);color:var(--text3);font-size:0.76rem;line-height:2}
+/* ── Blog section ── */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.blog-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;transition:all 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.05);text-decoration:none;display:block}
+.blog-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(59,130,246,0.1)}
+.blog-tag{display:inline-block;font-size:0.67rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;padding:0.2rem 0.55rem;border-radius:5px;margin-bottom:0.65rem}
+.btag-pdf{background:rgba(225,29,116,0.08);color:#e11d74}
+.btag-img{background:rgba(99,102,241,0.08);color:#6366f1}
+.btag-vid{background:rgba(5,150,105,0.08);color:#059669}
+.btag-guide{background:rgba(59,130,246,0.08);color:#3b82f6}
+.blog-card h3{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.4rem;line-height:1.35}
+.blog-card p{font-size:0.78rem;color:var(--text2);line-height:1.6;margin-bottom:0.75rem}
+.blog-read{font-size:0.75rem;font-weight:600;color:var(--accent)}
+footer{position:relative;z-index:1;text-align:center;padding:2rem 1.5rem;border-top:1px solid var(--border);color:var(--text3);font-size:0.76rem;line-height:2;background:#fff}
 footer strong{color:var(--text2)}
 canvas.hidden{display:none}
 </style>
@@ -139,130 +263,96 @@ canvas.hidden{display:none}
 
 <nav>
   <div class="logo">ConvertX ✦</div>
-  <div class="nav-menus">
-    <div class="nav-group" id="ng-pdf">
-      <button class="nav-trigger" onclick="toggleDD('ng-pdf')">📄 PDF Tools <span class="arr">▼</span></button>
-      <div class="nav-dropdown">
-        <div class="dd-cat">Convert</div>
-        <button class="dd-item" onclick="openTool('pdf-to-img')"><span class="di">🖼️</span><span class="dt"><strong>PDF to Images</strong><span>Extract pages as PNG/JPG</span></span></button>
-        <button class="dd-item" onclick="openTool('img-to-pdf')"><span class="di">📑</span><span class="dt"><strong>Images to PDF</strong><span>Combine images into PDF</span></span></button>
-        <button class="dd-item" onclick="openTool('pdf-to-text')"><span class="di">📝</span><span class="dt"><strong>PDF to Text</strong><span>Extract all text content</span></span></button>
-        <div class="dd-sep"></div>
-        <div class="dd-cat">Organize</div>
-        <button class="dd-item" onclick="openTool('merge-pdf')"><span class="di">📚</span><span class="dt"><strong>Merge PDFs</strong><span>Combine multiple PDFs</span></span></button>
-        <button class="dd-item" onclick="openTool('split-pdf')"><span class="di">✂️</span><span class="dt"><strong>Split PDF</strong><span>Extract specific pages</span></span></button>
-        <button class="dd-item" onclick="openTool('rotate-pdf')"><span class="di">🔄</span><span class="dt"><strong>Rotate PDF Pages</strong><span>Rotate all or specific pages</span></span></button>
-        <div class="dd-sep"></div>
-        <div class="dd-cat">Enhance</div>
-        <button class="dd-item" onclick="openTool('compress-pdf')"><span class="di">🗜️</span><span class="dt"><strong>Compress PDF</strong><span>Reduce file size</span></span></button>
-        <button class="dd-item" onclick="openTool('watermark-pdf')"><span class="di">💧</span><span class="dt"><strong>Watermark PDF</strong><span>Add text watermark</span></span></button>
-        <button class="dd-item" onclick="openTool('pagenums-pdf')"><span class="di">🔢</span><span class="dt"><strong>Add Page Numbers</strong><span>Number every page</span></span></button>
-        <button class="dd-item" onclick="openTool('info-pdf')"><span class="di">ℹ️</span><span class="dt"><strong>PDF Info & Stats</strong><span>Page count, metadata</span></span></button>
-      </div>
-    </div>
-    <div class="nav-group" id="ng-img">
-      <button class="nav-trigger" onclick="toggleDD('ng-img')">🖼️ Image Tools <span class="arr">▼</span></button>
-      <div class="nav-dropdown" style="min-width:275px">
-        <div class="dd-cat">Convert & Export</div>
-        <button class="dd-item" onclick="openTool('img-convert')"><span class="di">🔄</span><span class="dt"><strong>Format Converter</strong><span>JPG ↔ PNG ↔ WEBP ↔ BMP</span></span></button>
-        <button class="dd-item" onclick="openTool('img-base64')"><span class="di">💻</span><span class="dt"><strong>Image to Base64</strong><span>Encode for web/CSS</span></span></button>
-        <button class="dd-item" onclick="openTool('img-favicon')"><span class="di">⭐</span><span class="dt"><strong>Favicon Generator</strong><span>Create icons from image</span></span></button>
-        <div class="dd-sep"></div>
-        <div class="dd-cat">Edit & Transform</div>
-        <button class="dd-item" onclick="openTool('img-resize')"><span class="di">📐</span><span class="dt"><strong>Resize Image</strong><span>Pixels or %, lock ratio</span></span></button>
-        <button class="dd-item" onclick="openTool('img-compress')"><span class="di">🗜️</span><span class="dt"><strong>Compress Image</strong><span>Reduce size, control quality</span></span></button>
-        <button class="dd-item" onclick="openTool('img-crop')"><span class="di">✂️</span><span class="dt"><strong>Crop Image</strong><span>Crop by coordinates</span></span></button>
-        <button class="dd-item" onclick="openTool('img-rotate')"><span class="di">🔄</span><span class="dt"><strong>Rotate & Flip</strong><span>90°/180°, flip H/V</span></span></button>
-        <button class="dd-item" onclick="openTool('img-watermark')"><span class="di">💧</span><span class="dt"><strong>Watermark Image</strong><span>Add text overlay</span></span></button>
-        <button class="dd-item" onclick="openTool('img-border')"><span class="di">🖼️</span><span class="dt"><strong>Add Border</strong><span>Custom color & width</span></span></button>
-        <div class="dd-sep"></div>
-        <div class="dd-cat">Filters & Adjust</div>
-        <button class="dd-item" onclick="openTool('img-filter')"><span class="di">🎨</span><span class="dt"><strong>Filters & Effects</strong><span>Grayscale, sepia, blur…</span></span></button>
-        <button class="dd-item" onclick="openTool('img-brightness')"><span class="di">☀️</span><span class="dt"><strong>Brightness & Contrast</strong><span>Adjust exposure, saturation</span></span></button>
-      </div>
-    </div>
-    <div class="nav-group" id="ng-vid">
-      <button class="nav-trigger" onclick="toggleDD('ng-vid')">🎬 Video Tools <span class="arr">▼</span></button>
-      <div class="nav-dropdown">
-        <div class="dd-cat">Convert & Export</div>
-        <button class="dd-item" onclick="openTool('vid-audio')"><span class="di">🎵</span><span class="dt"><strong>Extract Audio</strong><span>MP3, WAV, OGG</span></span></button>
-        <button class="dd-item" onclick="openTool('vid-gif')"><span class="di">🎞️</span><span class="dt"><strong>Video to GIF</strong><span>Animated GIF from clip</span></span></button>
-        <button class="dd-item" onclick="openTool('vid-frames')"><span class="di">📸</span><span class="dt"><strong>Extract Frames</strong><span>Save frames as images</span></span></button>
-        <button class="dd-item" onclick="openTool('vid-convert')"><span class="di">🔀</span><span class="dt"><strong>Convert Format</strong><span>MP4 ↔ WEBM ↔ MKV</span></span></button>
-        <div class="dd-sep"></div>
-        <div class="dd-cat">Edit & Enhance</div>
-        <button class="dd-item" onclick="openTool('vid-trim')"><span class="di">✂️</span><span class="dt"><strong>Trim Video</strong><span>Cut by time range</span></span></button>
-        <button class="dd-item" onclick="openTool('vid-compress')"><span class="di">🗜️</span><span class="dt"><strong>Compress Video</strong><span>Reduce file size</span></span></button>
-        <button class="dd-item" onclick="openTool('vid-mute')"><span class="di">🔇</span><span class="dt"><strong>Mute Video</strong><span>Remove audio track</span></span></button>
-        <button class="dd-item" onclick="openTool('vid-speed')"><span class="di">⚡</span><span class="dt"><strong>Change Speed</strong><span>0.25× to 4×</span></span></button>
-        <button class="dd-item" onclick="openTool('vid-watermark')"><span class="di">💧</span><span class="dt"><strong>Watermark Video</strong><span>Burn text onto video</span></span></button>
-        <button class="dd-item" onclick="openTool('vid-reverse')"><span class="di">⏪</span><span class="dt"><strong>Reverse Video</strong><span>Play backwards</span></span></button>
-      </div>
-    </div>
-    <button class="nav-trigger" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why Free?</button>
-    <button class="nav-trigger" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</button>
-  </div>
+  <div style="flex:1"></div>
+  <button class="nav-trigger" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why Free?</button>
+  <button class="nav-trigger" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</button>
 </nav>
 
-<!-- TOP AD: Leaderboard 728x90 — prime visibility -->
-<div class="ad-slot" style="height:80px;width:100%;border-radius:0">
-  <div class="ad-label">Advertisement</div>
-  <div class="ad-placeholder">728×90 Leaderboard — Paste AdSense ins tag here</div>
+<!-- Processing overlay -->
+<div id="proc-overlay" style="display:none;position:fixed;inset:0;z-index:900;background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);align-items:center;justify-content:center;flex-direction:column;gap:1rem">
+  <div style="width:52px;height:52px;border:3px solid #bfdbfe;border-top-color:#3b82f6;border-radius:50%;animation:spin 0.9s linear infinite"></div>
+  <div id="proc-msg" style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#1e3a5f">Processing…</div>
+  <div style="font-size:0.78rem;color:#64748b">Please wait — running in your browser</div>
 </div>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+
 
 <section class="hero">
-  <div class="badge"><span class="pulse"></span> 30+ Tools · 100% Free · No Upload · No Sign-up</div>
-  <h1>Convert PDF, Images<br>& Video <span class="grad">Instantly.</span></h1>
-  <p class="hero-sub">Every file tool you'll ever need — running entirely in your browser. Your files never leave your device. No accounts. No limits. Forever free.</p>
-  <div class="pills">
-    <span class="pill">🔒 100% Private</span><span class="pill">⚡ Instant</span>
-    <span class="pill">🌐 No Install</span><span class="pill">📱 Mobile Ready</span>
-    <span class="pill">🆓 Forever Free</span><span class="pill">📄 12 PDF Tools</span>
-    <span class="pill">🖼️ 11 Image Tools</span><span class="pill">🎬 10 Video Tools</span>
+  <div class="hero-left">
+    <div class="hero-tagline">ConvertX — <span class="grad">32 Free Tools.</span></div>
+    <p class="hero-sub">PDF · Image · Video — all in your browser. Zero uploads. Zero cost.</p>
+  </div>
+  <div class="stats-row">
+    <div class="stat-item"><span class="stat-num">32</span><span class="stat-lbl">Tools</span></div>
+    <div class="stat-item"><span class="stat-num">0</span><span class="stat-lbl">Uploads</span></div>
+    <div class="stat-item"><span class="stat-num">∞</span><span class="stat-lbl">Free</span></div>
+    <div class="stat-item"><span class="stat-num">0s</span><span class="stat-lbl">Wait</span></div>
   </div>
 </section>
 
-<!-- HERO RECTANGLE AD — 300x250, high CTR -->
-<div style="position:relative;z-index:1;max-width:320px;margin:0 auto 1.5rem;padding:0 1rem">
-  <div class="ad-slot" style="height:250px">
-    <div class="ad-label">Advertisement</div>
-    <div class="ad-placeholder">300×250 Rectangle Ad<br><small style="color:var(--text3)">High CTR slot — paste AdSense code</small></div>
+<!-- FILTER TABS -->
+<div class="filter-bar">
+  <button class="flt active-all" onclick="filterTools('all',this)">⚡ All <span class="flt-count">32</span></button>
+  <button class="flt" onclick="filterTools('pdf',this)">📄 PDF <span class="flt-count">10</span></button>
+  <button class="flt" onclick="filterTools('img',this)">🖼️ Images <span class="flt-count">12</span></button>
+  <button class="flt" onclick="filterTools('vid',this)">🎬 Video <span class="flt-count">10</span></button>
+</div>
+
+<!-- PDF SECTION -->
+<div class="tool-section visible" id="sec-all-pdf">
+  <div class="section-hd"><div class="section-hd-line left"></div><span class="section-hd-label shd-pdf">📄 PDF Tools</span><div class="section-hd-line"></div></div>
+  <div class="home-grid">
+    <div class="home-card card-pdf" onclick="openTool('pdf-to-img')"><div class="hc-icon-wrap icon-pdf">🖼️</div><div class="hc-title">PDF to Images</div><div class="hc-cat">PNG / JPG per page</div></div>
+    <div class="home-card card-pdf" onclick="openTool('img-to-pdf')"><div class="hc-icon-wrap icon-pdf">📑</div><div class="hc-title">Images to PDF</div><div class="hc-cat">Combine into one file</div></div>
+    <div class="home-card card-pdf" onclick="openTool('merge-pdf')"><div class="hc-icon-wrap icon-pdf">📚</div><div class="hc-title">Merge PDFs</div><div class="hc-cat">Join multiple files</div></div>
+    <div class="home-card card-pdf" onclick="openTool('split-pdf')"><div class="hc-icon-wrap icon-pdf">✂️</div><div class="hc-title">Split PDF</div><div class="hc-cat">Extract pages</div></div>
+    <div class="home-card card-pdf" onclick="openTool('compress-pdf')"><div class="hc-icon-wrap icon-pdf">🗜️</div><div class="hc-title">Compress PDF</div><div class="hc-cat">Shrink file size</div></div>
+    <div class="home-card card-pdf" onclick="openTool('watermark-pdf')"><div class="hc-icon-wrap icon-pdf">💧</div><div class="hc-title">Watermark PDF</div><div class="hc-cat">Add text overlay</div></div>
+    <div class="home-card card-pdf" onclick="openTool('rotate-pdf')"><div class="hc-icon-wrap icon-pdf">🔄</div><div class="hc-title">Rotate PDF</div><div class="hc-cat">All or specific pages</div></div>
+    <div class="home-card card-pdf" onclick="openTool('pagenums-pdf')"><div class="hc-icon-wrap icon-pdf">🔢</div><div class="hc-title">Page Numbers</div><div class="hc-cat">Auto-number pages</div></div>
+    <div class="home-card card-pdf" onclick="openTool('pdf-to-text')"><div class="hc-icon-wrap icon-pdf">📝</div><div class="hc-title">PDF to Text</div><div class="hc-cat">Extract all text</div></div>
+    <div class="home-card card-pdf" onclick="openTool('info-pdf')"><div class="hc-icon-wrap icon-pdf">ℹ️</div><div class="hc-title">PDF Info</div><div class="hc-cat">Metadata & stats</div></div>
   </div>
 </div>
 
-<!-- HOME TOOL GRID -->
-<div class="home-grid">
-  <div class="home-card" onclick="openTool('pdf-to-img')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">🖼️</div><div class="hc-title">PDF to Images</div><div class="hc-cat">PNG/JPG per page</div></div>
-  <div class="home-card" onclick="openTool('img-to-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">📑</div><div class="hc-title">Images to PDF</div><div class="hc-cat">Combine images</div></div>
-  <div class="home-card" onclick="openTool('merge-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">📚</div><div class="hc-title">Merge PDFs</div><div class="hc-cat">Combine files</div></div>
-  <div class="home-card" onclick="openTool('split-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">✂️</div><div class="hc-title">Split PDF</div><div class="hc-cat">Extract pages</div></div>
-  <div class="home-card" onclick="openTool('compress-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">🗜️</div><div class="hc-title">Compress PDF</div><div class="hc-cat">Reduce size</div></div>
-  <div class="home-card" onclick="openTool('watermark-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">💧</div><div class="hc-title">Watermark PDF</div><div class="hc-cat">Text overlay</div></div>
-  <div class="home-card" onclick="openTool('rotate-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">🔄</div><div class="hc-title">Rotate PDF</div><div class="hc-cat">All or specific pages</div></div>
-  <div class="home-card" onclick="openTool('pagenums-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">🔢</div><div class="hc-title">Page Numbers</div><div class="hc-cat">Auto number pages</div></div>
-  <div class="home-card" onclick="openTool('pdf-to-text')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">📝</div><div class="hc-title">PDF to Text</div><div class="hc-cat">Extract text</div></div>
-  <div class="home-card" onclick="openTool('info-pdf')"><div class="cat-badge cat-pdf">PDF</div><div class="hc-icon">ℹ️</div><div class="hc-title">PDF Info</div><div class="hc-cat">Metadata & stats</div></div>
-  <div class="home-card" onclick="openTool('img-convert')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🔄</div><div class="hc-title">Format Convert</div><div class="hc-cat">JPG/PNG/WEBP/BMP</div></div>
-  <div class="home-card" onclick="openTool('img-resize')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">📐</div><div class="hc-title">Resize Image</div><div class="hc-cat">Pixels or %</div></div>
-  <div class="home-card" onclick="openTool('img-compress')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🗜️</div><div class="hc-title">Compress Image</div><div class="hc-cat">Quality control</div></div>
-  <div class="home-card" onclick="openTool('img-crop')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">✂️</div><div class="hc-title">Crop Image</div><div class="hc-cat">By coordinates</div></div>
-  <div class="home-card" onclick="openTool('img-rotate')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🔄</div><div class="hc-title">Rotate & Flip</div><div class="hc-cat">90°/180°/flip</div></div>
-  <div class="home-card" onclick="openTool('img-watermark')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">💧</div><div class="hc-title">Watermark</div><div class="hc-cat">Text overlay</div></div>
-  <div class="home-card" onclick="openTool('img-filter')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🎨</div><div class="hc-title">Filters & Effects</div><div class="hc-cat">10+ filters</div></div>
-  <div class="home-card" onclick="openTool('img-brightness')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">☀️</div><div class="hc-title">Brightness</div><div class="hc-cat">Contrast & saturation</div></div>
-  <div class="home-card" onclick="openTool('img-border')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">🖼️</div><div class="hc-title">Add Border</div><div class="hc-cat">Custom color & size</div></div>
-  <div class="home-card" onclick="openTool('img-favicon')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">⭐</div><div class="hc-title">Favicon Maker</div><div class="hc-cat">All icon sizes</div></div>
-  <div class="home-card" onclick="openTool('img-base64')"><div class="cat-badge cat-img">Image</div><div class="hc-icon">💻</div><div class="hc-title">Image to Base64</div><div class="hc-cat">Encode for web</div></div>
-  <div class="home-card" onclick="openTool('vid-audio')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🎵</div><div class="hc-title">Extract Audio</div><div class="hc-cat">MP3/WAV/OGG</div></div>
-  <div class="home-card" onclick="openTool('vid-trim')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">✂️</div><div class="hc-title">Trim Video</div><div class="hc-cat">Cut by time</div></div>
-  <div class="home-card" onclick="openTool('vid-compress')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🗜️</div><div class="hc-title">Compress Video</div><div class="hc-cat">Reduce size</div></div>
-  <div class="home-card" onclick="openTool('vid-gif')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🎞️</div><div class="hc-title">Video to GIF</div><div class="hc-cat">Animated GIF</div></div>
-  <div class="home-card" onclick="openTool('vid-speed')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">⚡</div><div class="hc-title">Change Speed</div><div class="hc-cat">0.25× to 4×</div></div>
-  <div class="home-card" onclick="openTool('vid-mute')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🔇</div><div class="hc-title">Mute Video</div><div class="hc-cat">Remove audio</div></div>
-  <div class="home-card" onclick="openTool('vid-watermark')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">💧</div><div class="hc-title">Video Watermark</div><div class="hc-cat">Burn text</div></div>
-  <div class="home-card" onclick="openTool('vid-reverse')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">⏪</div><div class="hc-title">Reverse Video</div><div class="hc-cat">Play backwards</div></div>
-  <div class="home-card" onclick="openTool('vid-frames')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">📸</div><div class="hc-title">Extract Frames</div><div class="hc-cat">Frames as images</div></div>
-  <div class="home-card" onclick="openTool('vid-convert')"><div class="cat-badge cat-vid">Video</div><div class="hc-icon">🔀</div><div class="hc-title">Convert Format</div><div class="hc-cat">MP4/WEBM/MKV</div></div>
+<!-- IMAGE SECTION -->
+<div class="tool-section visible" id="sec-all-img">
+  <div class="section-hd"><div class="section-hd-line left"></div><span class="section-hd-label shd-img">🖼️ Image Tools</span><div class="section-hd-line"></div></div>
+  <div class="home-grid">
+    <div class="home-card card-img" onclick="openTool('img-upscale')">
+      <span class="new-badge">NEW</span>
+      <div class="hc-icon-wrap icon-new">🔍</div>
+      <div class="hc-title">Image Upscaler</div><div class="hc-cat">2× / 4× resolution boost</div>
+    </div>
+    <div class="home-card card-img" onclick="openTool('img-convert')"><div class="hc-icon-wrap icon-img">🔄</div><div class="hc-title">Format Convert</div><div class="hc-cat">JPG / PNG / WEBP / BMP</div></div>
+    <div class="home-card card-img" onclick="openTool('img-resize')"><div class="hc-icon-wrap icon-img">📐</div><div class="hc-title">Resize Image</div><div class="hc-cat">Pixels or %</div></div>
+    <div class="home-card card-img" onclick="openTool('img-compress')"><div class="hc-icon-wrap icon-img">🗜️</div><div class="hc-title">Compress Image</div><div class="hc-cat">Control quality</div></div>
+    <div class="home-card card-img" onclick="openTool('img-crop')"><div class="hc-icon-wrap icon-img">✂️</div><div class="hc-title">Crop Image</div><div class="hc-cat">By coordinates</div></div>
+    <div class="home-card card-img" onclick="openTool('img-rotate')"><div class="hc-icon-wrap icon-img">🔃</div><div class="hc-title">Rotate & Flip</div><div class="hc-cat">90° / 180° / flip</div></div>
+    <div class="home-card card-img" onclick="openTool('img-watermark')"><div class="hc-icon-wrap icon-img">💧</div><div class="hc-title">Watermark</div><div class="hc-cat">Text overlay</div></div>
+    <div class="home-card card-img" onclick="openTool('img-filter')"><div class="hc-icon-wrap icon-img">🎨</div><div class="hc-title">Filters & Effects</div><div class="hc-cat">10+ filters</div></div>
+    <div class="home-card card-img" onclick="openTool('img-brightness')"><div class="hc-icon-wrap icon-img">☀️</div><div class="hc-title">Brightness</div><div class="hc-cat">Contrast & saturation</div></div>
+    <div class="home-card card-img" onclick="openTool('img-border')"><div class="hc-icon-wrap icon-img">🖼️</div><div class="hc-title">Add Border</div><div class="hc-cat">Custom color & width</div></div>
+    <div class="home-card card-img" onclick="openTool('img-favicon')"><div class="hc-icon-wrap icon-img">⭐</div><div class="hc-title">Favicon Maker</div><div class="hc-cat">All icon sizes</div></div>
+    <div class="home-card card-img" onclick="openTool('img-base64')"><div class="hc-icon-wrap icon-img">💻</div><div class="hc-title">Image → Base64</div><div class="hc-cat">Encode for web/CSS</div></div>
+  </div>
+</div>
+
+<!-- VIDEO SECTION -->
+<div class="tool-section visible" id="sec-all-vid">
+  <div class="section-hd"><div class="section-hd-line left"></div><span class="section-hd-label shd-vid">🎬 Video Tools</span><div class="section-hd-line"></div></div>
+  <div class="home-grid">
+    <div class="home-card card-vid" onclick="openTool('vid-audio')"><div class="hc-icon-wrap icon-vid">🎵</div><div class="hc-title">Extract Audio</div><div class="hc-cat">MP3 / WAV / OGG</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-trim')"><div class="hc-icon-wrap icon-vid">✂️</div><div class="hc-title">Trim Video</div><div class="hc-cat">Cut by time range</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-compress')"><div class="hc-icon-wrap icon-vid">🗜️</div><div class="hc-title">Compress Video</div><div class="hc-cat">Reduce file size</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-gif')"><div class="hc-icon-wrap icon-vid">🎞️</div><div class="hc-title">Video to GIF</div><div class="hc-cat">Animated GIF</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-speed')"><div class="hc-icon-wrap icon-vid">⚡</div><div class="hc-title">Change Speed</div><div class="hc-cat">0.25× to 4×</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-mute')"><div class="hc-icon-wrap icon-vid">🔇</div><div class="hc-title">Mute Video</div><div class="hc-cat">Remove audio track</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-watermark')"><div class="hc-icon-wrap icon-vid">💧</div><div class="hc-title">Video Watermark</div><div class="hc-cat">Burn text onto video</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-reverse')"><div class="hc-icon-wrap icon-vid">⏪</div><div class="hc-title">Reverse Video</div><div class="hc-cat">Play backwards</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-frames')"><div class="hc-icon-wrap icon-vid">📸</div><div class="hc-title">Extract Frames</div><div class="hc-cat">Save as images</div></div>
+    <div class="home-card card-vid" onclick="openTool('vid-convert')"><div class="hc-icon-wrap icon-vid">🔀</div><div class="hc-title">Convert Format</div><div class="hc-cat">MP4 / WEBM / MKV</div></div>
+  </div>
 </div>
 
 <!-- MID-PAGE BANNER AD -->
@@ -297,6 +387,50 @@ canvas.hidden{display:none}
   <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">Can I convert video without installing software? <span class="arr2">▼</span></button><div class="faq-a">Yes! Video tools use FFmpeg.wasm running entirely in your browser. Extract audio, trim, compress, change speed, mute, reverse, convert format, extract frames, add watermarks, and create GIFs — no installs needed.</div></div>
   <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">Is there a file size limit? <span class="arr2">▼</span></button><div class="faq-a">No hard limits. Very large files depend on your device's available RAM. For video, files under 500MB give best browser performance.</div></div>
   <div class="faq-item" onclick="this.classList.toggle('open')"><button class="faq-q">Does it work on mobile? <span class="arr2">▼</span></button><div class="faq-a">Yes, ConvertX is fully responsive on iOS and Android. PDF and image tools work great on mobile. Video tools work but may be slower on older phones.</div></div>
+</div>
+
+<!-- BLOG SECTION -->
+<div class="sec-wrap" id="blog" style="padding-top:0">
+  <h2 class="sec-title">📖 Guides & Tips</h2>
+  <p class="sec-sub">Learn how to get the most out of every tool</p>
+  <div class="blog-grid">
+    <a href="blog-image-upscaler.html" class="blog-card">
+      <span class="blog-tag btag-img">🖼️ Image</span>
+      <h3>How to Upscale Images Without Losing Quality</h3>
+      <p>Increase your photo resolution 2× or 4× instantly in your browser — no upload, no software, completely free.</p>
+      <span class="blog-read">Read guide →</span>
+    </a>
+    <a href="#" onclick="openTool('compress-pdf');return false" class="blog-card">
+      <span class="blog-tag btag-pdf">📄 PDF</span>
+      <h3>How to Compress a PDF Without Losing Quality</h3>
+      <p>Large PDFs are slow to email and share. Learn how to shrink any PDF file in seconds — all inside your browser.</p>
+      <span class="blog-read">Try it now →</span>
+    </a>
+    <a href="#" onclick="openTool('vid-audio');return false" class="blog-card">
+      <span class="blog-tag btag-vid">🎬 Video</span>
+      <h3>Extract Audio from Any Video for Free</h3>
+      <p>Need just the audio from a video file? Extract MP3, WAV or OGG audio in one click — no software install needed.</p>
+      <span class="blog-read">Try it now →</span>
+    </a>
+    <a href="#" onclick="openTool('merge-pdf');return false" class="blog-card">
+      <span class="blog-tag btag-pdf">📄 PDF</span>
+      <h3>Merge Multiple PDFs into One File</h3>
+      <p>Combine contracts, reports and invoices into a single PDF. Drag, drop and merge — done in under 10 seconds.</p>
+      <span class="blog-read">Try it now →</span>
+    </a>
+    <a href="#" onclick="openTool('img-convert');return false" class="blog-card">
+      <span class="blog-tag btag-img">🖼️ Image</span>
+      <h3>JPG vs PNG vs WEBP — Which Format Should You Use?</h3>
+      <p>Choosing the right image format affects quality, file size and website speed. Here's how to pick the right one.</p>
+      <span class="blog-read">Convert now →</span>
+    </a>
+    <a href="#" onclick="openTool('vid-trim');return false" class="blog-card">
+      <span class="blog-tag btag-vid">🎬 Video</span>
+      <h3>Trim & Cut Video Online Without Watermark</h3>
+      <p>Cut the exact clip you need from any video — no watermarks, no limits, no account. Works on mobile too.</p>
+      <span class="blog-read">Try it now →</span>
+    </a>
+  </div>
 </div>
 
 <!-- BOTTOM AD before footer -->
@@ -344,6 +478,25 @@ canvas.hidden{display:none}
 <script>
 pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
+// ── Category filter ──
+function filterTools(cat, btn) {
+  document.querySelectorAll('.flt').forEach(b => b.className = 'flt');
+  btn.className = 'flt active-' + cat;
+  const sections = ['pdf','img','vid'];
+  if (cat === 'all') {
+    sections.forEach(s => {
+      document.getElementById('sec-all-'+s).classList.add('visible');
+      document.querySelectorAll('.section-hd').forEach(h => h.style.display='');
+    });
+  } else {
+    sections.forEach(s => {
+      const el = document.getElementById('sec-all-'+s);
+      if (s === cat) { el.classList.add('visible'); }
+      else { el.classList.remove('visible'); }
+    });
+  }
+}
+
 // ── Nav dropdown ──
 function toggleDD(id){const g=document.getElementById(id);const was=g.classList.contains('open');document.querySelectorAll('.nav-group').forEach(x=>{x.classList.remove('open');x.querySelector('.nav-trigger').classList.remove('open')});if(!was){g.classList.add('open');g.querySelector('.nav-trigger').classList.add('open')}}
 document.addEventListener('click',e=>{if(!e.target.closest('.nav-group'))document.querySelectorAll('.nav-group').forEach(x=>{x.classList.remove('open');x.querySelector('.nav-trigger').classList.remove('open')})});
@@ -366,10 +519,29 @@ function closeDrawer(){document.getElementById('drawer').classList.remove('open'
 function fmtSz(b){if(b<1024)return b+' B';if(b<1048576)return(b/1024).toFixed(1)+' KB';return(b/1048576).toFixed(1)+' MB'}
 function showFiles(el,files){if(!el)return;let h='';Array.from(files).forEach(f=>{h+=`<div class="chip"><span>📎 ${f.name}</span><span class="sz">${fmtSz(f.size)}</span></div>`});el.innerHTML=h}
 function showPrevs(el,files){if(!el)return;let h='';Array.from(files).slice(0,6).forEach(f=>{h+=`<div class="prev-thumb"><img src="${URL.createObjectURL(f)}"/></div>`});if(files.length>6)h+=`<div class="prev-thumb" style="display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:0.75rem">+${files.length-6}</div>`;el.innerHTML=h}
-function ok(id){const el=document.getElementById(id);if(el)el.style.display='flex'}
-function er(id,msg){const el=document.getElementById(id);if(el){el.style.display='block';el.textContent='❌ '+msg}}
-function prg(fid,bid,pct){const b=document.getElementById(bid),f=document.getElementById(fid);if(b)b.style.display='block';if(f)f.style.width=pct+'%'}
-function hidePrg(bid){const b=document.getElementById(bid);if(b)b.style.display='none'}
+const PROC_MSGS=['Processing your file…','Working on it…','Almost done…','Converting…','Applying changes…'];
+let _procTimer=null;
+function showProc(msg){
+  const o=document.getElementById('proc-overlay');
+  const m=document.getElementById('proc-msg');
+  if(o){o.style.display='flex';}
+  if(m){m.textContent=msg||PROC_MSGS[Math.floor(Math.random()*PROC_MSGS.length)];}
+}
+function hideProc(){
+  const o=document.getElementById('proc-overlay');
+  if(o)o.style.display='none';
+}
+function ok(id){const el=document.getElementById(id);if(el)el.style.display='flex';hideProc();}
+function er(id,msg){const el=document.getElementById(id);if(el){el.style.display='block';el.textContent='❌ '+msg;}hideProc();}
+function prg(fid,bid,pct){
+  const b=document.getElementById(bid),f=document.getElementById(fid);
+  if(b)b.style.display='block';if(f)f.style.width=pct+'%';
+  if(pct<=10)showProc();
+  else if(pct<50){const m=document.getElementById('proc-msg');if(m)m.textContent='Processing… '+Math.round(pct)+'%';}
+  else if(pct<90){const m=document.getElementById('proc-msg');if(m)m.textContent='Almost there… '+Math.round(pct)+'%';}
+  else{const m=document.getElementById('proc-msg');if(m)m.textContent='Finishing up…';}
+}
+function hidePrg(bid){const b=document.getElementById(bid);if(b)b.style.display='none';hideProc();}
 function dl(url,name){const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a)}
 function readAB(file){return new Promise((r,j)=>{const fr=new FileReader();fr.onload=e=>r(e.target.result);fr.onerror=j;fr.readAsArrayBuffer(file)})}
 function loadImg(file){return new Promise((r,j)=>{const i=new Image(),u=URL.createObjectURL(file);i.onload=()=>{URL.revokeObjectURL(u);r(i)};i.onerror=j;i.src=u})}
@@ -424,6 +596,99 @@ const BTN=(fn,lbl='⚡ Convert & Download')=>`<button class="btn-go" id="gb" dis
 // TOOL DEFINITIONS
 // ══════════════════════════════════════════
 const TOOLS={
+
+// ── IMAGE UPSCALER ──────────────────────
+'img-upscale':{icon:'🔍',title:'Image Upscaler — Enhance Resolution',
+  html:()=>
+    `<div class="info-box">✨ Upscale your image up to 4× using high-quality browser interpolation. Works best on photos, illustrations and logos. 100% private — no upload.</div>`+
+    SL('Upload Image')+
+    `<div class="drop-zone" id="dz"><input type="file" id="fi" accept="image/*"/><div class="dz-icon">🖼️</div><div class="dz-text">Drop image or click to browse</div><div class="dz-sub">JPG, PNG, WEBP, BMP — no size limit</div></div>`+
+    `<div class="file-chips" id="fc"></div>`+
+    `<div id="us-preview" style="display:none;margin-top:1rem">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem">
+        <div><div style="font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem">Original</div><canvas id="us-before" style="width:100%;border-radius:8px;border:1px solid var(--border)"></canvas><div id="us-before-size" style="font-size:0.7rem;color:var(--text3);margin-top:0.25rem"></div></div>
+        <div><div style="font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem">Upscaled Preview</div><canvas id="us-after" style="width:100%;border-radius:8px;border:1px solid var(--accent);box-shadow:0 0 12px rgba(124,111,255,0.2)"></canvas><div id="us-after-size" style="font-size:0.7rem;color:var(--accent);margin-top:0.25rem"></div></div>
+      </div>
+    </div>`+
+    SL('Upscale Settings')+
+    CR('Scale Factor',`<select id="us-scale"><option value="2">2× (Double resolution)</option><option value="3">3× (Triple resolution)</option><option value="4">4× (Quadruple resolution)</option></select>`)+
+    CR('Output Format',SEL('us-fmt',[['png','PNG (lossless, best quality)'],['jpg','JPG (smaller file size)'],['webp','WEBP (modern, balanced)']]))+
+    CR('Quality (JPG/WEBP)',`<input type="range" id="us-q" min="70" max="100" value="95"/><span id="us-ql" style="font-size:0.78rem;color:var(--text2);flex:none;width:30px">95</span>`)+
+    `<button class="btn-go" id="gb" disabled onclick="doUpscale()">🔍 Upscale & Download</button>`+
+    `<div class="prog-bar" id="pb"><div class="prog-fill" id="pf"></div></div>`+
+    `<div class="result-box" id="rb">✅ Upscaled image downloaded!</div>`+
+    `<div class="error-box" id="eb"></div>`,
+  init:()=>{
+    let _img=null;
+    const q=document.getElementById('us-q'),ql=document.getElementById('us-ql');
+    if(q&&ql){q.oninput=()=>ql.textContent=q.value;}
+    const sc=document.getElementById('us-scale');
+    if(sc){sc.onchange=()=>{if(_img)previewUpscale(_img,parseInt(sc.value));};}
+    dzSetup('dz','fi',files=>{
+      const f=files[0];if(!f)return;
+      document.getElementById('fc').innerHTML=`<div class="chip"><span>📎 ${f.name}</span><span class="sz">${fmtSz(f.size)}</span></div>`;
+      const img=new Image();img.onload=()=>{
+        _img=img;window._upscaleImg=img;window._upscaleFile=f;
+        const bef=document.getElementById('us-before');
+        bef.width=img.width;bef.height=img.height;
+        const bctx=bef.getContext('2d');bctx.drawImage(img,0,0);
+        document.getElementById('us-before-size').textContent=`${img.width} × ${img.height} px`;
+        previewUpscale(img,parseInt(document.getElementById('us-scale').value));
+        document.getElementById('us-preview').style.display='block';
+        document.getElementById('gb').disabled=false;
+      };img.src=URL.createObjectURL(f);
+    });
+    function previewUpscale(img,scale){
+      const aw=document.getElementById('us-after');
+      const nw=img.width*scale,nh=img.height*scale;
+      aw.width=nw;aw.height=nh;
+      const actx=aw.getContext('2d');
+      actx.imageSmoothingEnabled=true;actx.imageSmoothingQuality='high';
+      // multi-step for better quality
+      if(scale>=3){
+        const tmp=document.createElement('canvas');tmp.width=img.width*2;tmp.height=img.height*2;
+        const tc=tmp.getContext('2d');tc.imageSmoothingEnabled=true;tc.imageSmoothingQuality='high';
+        tc.drawImage(img,0,0,tmp.width,tmp.height);
+        actx.drawImage(tmp,0,0,nw,nh);
+      } else {
+        actx.drawImage(img,0,0,nw,nh);
+      }
+      document.getElementById('us-after-size').textContent=`${nw} × ${nh} px — ${scale}× larger`;
+    }
+    window.previewUpscale=previewUpscale;
+    window.doUpscale=function(){
+      const img=window._upscaleImg,f=window._upscaleFile;
+      if(!img||!f){er('eb','Please upload an image first.');return;}
+      const scale=parseInt(document.getElementById('us-scale').value);
+      const fmt=document.getElementById('us-fmt').value;
+      const q=parseInt(document.getElementById('us-q').value)/100;
+      try{
+        prg('pf','pb',10);
+        const nw=img.width*scale,nh=img.height*scale;
+        const c=document.createElement('canvas');c.width=nw;c.height=nh;
+        const ctx=c.getContext('2d');
+        ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+        if(scale>=3){
+          const tmp=document.createElement('canvas');tmp.width=img.width*2;tmp.height=img.height*2;
+          const tc=tmp.getContext('2d');tc.imageSmoothingEnabled=true;tc.imageSmoothingQuality='high';
+          tc.drawImage(img,0,0,tmp.width,tmp.height);
+          ctx.drawImage(tmp,0,0,nw,nh);
+        } else {
+          ctx.drawImage(img,0,0,nw,nh);
+        }
+        prg('pf','pb',80);
+        const mime=fmt==='jpg'?'image/jpeg':fmt==='webp'?'image/webp':'image/png';
+        const qual=fmt==='png'?undefined:q;
+        const base=f.name.replace(/\.[^.]+$/,'');
+        c.toBlob(blob=>{
+          prg('pf','pb',100);
+          dl(URL.createObjectURL(blob),`${base}_${scale}x.${fmt}`);
+          hidePrg('pb');ok('rb');
+        },mime,qual);
+      }catch(e){hidePrg('pb');er('eb',e.message||'Upscaling failed.');}
+    };
+  }
+},
 
 // ── PDF TOOLS ──────────────────────────
 'pdf-to-img':{icon:'🖼️',title:'PDF to Images',
